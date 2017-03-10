@@ -48,14 +48,54 @@ class RegisterViewController: AppViewController {
     }
     
     override func setupAction() {
+        
+        // Button
         _ = self.btnNext.reactive.tap.observeNext { [weak self] in
             self?.btnNextTap()
         }
+        
+        // Text
+        _ = self.txtMobile.reactive.text.observeNext(with: { (text) in
+            User.current.phoneNumber = text
+        })
+        
+        _ = self.txtName.reactive.text.observeNext(with: { (text) in
+            User.current.userName = text
+        })
     }
     
     // MARK: - Action
     func btnNextTap() {
-        self.performSegue(withIdentifier: AppDefine.Segue.registerToDetail, sender: nil)
+        let valid = self.veriryForm()
+        if valid.isError {
+            BannerManager.share.showMessage(withContent: valid.errorType.rawValue, theme: .error)
+        } else {
+            self.performSegue(withIdentifier: AppDefine.Segue.registerToDetail, sender: nil)
+        }
+    }
+    
+    func veriryForm() -> AppError {
+        
+        let res = AppError()
+        if let phone = User.current.phoneNumber, !phone.isBlank {
+            if !phone.isPhone {
+                res.isError = true
+                res.errorType = .blankMobile
+                return res
+            }
+        } else {
+            res.isError = true
+            res.errorType = .blankMobile
+            return res
+        }
+        
+        if (User.current.userName ?? "").isBlank {
+            res.isError = true
+            res.errorType = .blankUserName
+            return res
+        }
+        
+        return res
     }
 
 }

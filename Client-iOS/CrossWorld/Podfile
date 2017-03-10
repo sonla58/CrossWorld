@@ -20,6 +20,7 @@ target 'CrossWorld' do
   pod 'AttributedTextView'
   pod 'SwiftDate'
   pod 'ImagePicker'
+  pod 'CountryPickerSwift'
   
   #Facebook SDK
   pod 'FBSDKCoreKit'
