@@ -11,7 +11,7 @@ var WebAPIHandler = {
         app.use(bodyParser.json());
 
         router.use("/register", require('./Register'));
-        // router.use("/login", require('./Login'));
+        router.use("/login", require('./Login'));
         // router.use("/logout", require('./Logout'));
 
         WebAPIHandler.router = router;

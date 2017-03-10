@@ -21,10 +21,7 @@
     Const.resVerifyNumIncorrect = 111;
 
     Const.resPWIncorrect = 121;
-    Const.resSocialIdIncorrect = 122;
-    Const.resNotVerified = 123;
-    Const.resBlocked = 124;
-    Const.resNotActivated = 125;
+    Const.resFacebookNotSignup = 122;
 
     Const.resCodeNoId = 131;
 
@@ -104,6 +101,7 @@
     Const.msgNotActive = 'Account not activate';
     Const.msgPasswordIncorrect = 'Your password incorrect';
     Const.msgBlocked = 'Your account currently block';
+    Const.msgFacebookNotSignup = "Facebook not signup";
 
     // check promotion
     Const.msgPromotionCodeSuccess = 'Promotion code success';

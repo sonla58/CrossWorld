@@ -29,6 +29,9 @@ module.exports.connect = function (callback) {
             type: Sequelize.STRING,
             allowNull: false
         },
+        avatar: {
+            type: Sequelize.STRING,
+        },
         facebook_id: {
             type: Sequelize.STRING
         },
@@ -86,6 +89,20 @@ exports.findByUserName = function (name, callback) {
 exports.findByPhone = function (phone, callback) {
     User.findOne({
         where: {phone_number: phone}
+    }).then(function (row) {
+        if (row) {
+            callback(null, row);
+        } else {
+            callback(null, null);
+        }
+    }).catch(function (err) {
+        callback(err, null);
+    })
+};
+
+exports.findByFacebookId = function (id, callback) {
+    User.findOne({
+        where: {facebook_id: id}
     }).then(function (row) {
         if (row) {
             callback(null, row);

@@ -26,7 +26,7 @@ Register.prototype.attach = function (router) {
             facebook_token: req.body.facebook_token,
             country_id: req.body.country_id,
         };
-
+        
         console.log(data);
         if(data.password) {
             bcrypt.genSalt(10, function (err, salt) {
