@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class AppViewController: UIViewController {
+class AppViewController: UIViewController, NVActivityIndicatorViewable {
     
     // MARK: - Declare
     var typeViewController: TypeViewController = .none {

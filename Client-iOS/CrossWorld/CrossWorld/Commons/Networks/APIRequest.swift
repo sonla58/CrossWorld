@@ -1,14 +1,14 @@
-////
-////  APIRequest.swift
-////  socket
-////
-////  Created by My Macbook Pro on 1/20/17.
-////  Copyright © 2017 My Macbook Pro. All rights reserved.
-////
 //
-//import Foundation
-//import Alamofire
+//  APIRequest.swift
+//  socket
 //
+//  Created by My Macbook Pro on 1/20/17.
+//  Copyright © 2017 My Macbook Pro. All rights reserved.
+//
+
+import Foundation
+import Alamofire
+
 class APIRequest {
 //
 //    //API Register
@@ -58,26 +58,28 @@ class APIRequest {
     //API login
     func loginFacebook(facebook_token: String?, phone_number: String?, password: String? , handle: @escaping (_ isSuscess: Bool, _ user: User?)->Void, handleNotActive: @escaping ()->Void){
         
-        let params = [
-            "facebook_token": facebook_token,
-            "phone_number": phone_number,
-            "password": password
-        ]
+        var params = Parameters()
+        if let facebook_token = facebook_token {
+            params["facebook_token"] = facebook_token
+        }else{
+            params["phone_number"] = phone_number!
+            params["password"] = password!
+        }
         
         APIHandles().RegisterAPIHandle(urlString: Domain.URL_LOGIN, params: params, method: .post, handle: { (isSuccess, data) in
             if !isSuccess {
                 handle(false, nil)
             }else{
                 if let data = data {
-                    //let user = User(dictionary: data)
-                    handle(true, User())
+                    let user = User(dictionary: data)
+                    handle(true, user)
                 }else{
                     handle(false, nil)
                 }
             }
 
         }) { (res) in
-            if res.error_code == "123" {
+            if res.error_code == "122" {
                 handleNotActive()
             }else{
                 if res.success {

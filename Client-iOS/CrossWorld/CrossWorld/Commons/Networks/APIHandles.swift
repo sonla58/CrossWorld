@@ -84,19 +84,19 @@ class APIHandles {
                 }else{
                     print(response)
                     handle(false, nil)
-//                    if let error = response.result.error {
-//                        if Define.DEV_MODE {
-//                            AlertView.alert(title: error.localizedDescription, message: "\(urlString) -- \(params)", style: UIAlertControllerStyle.alert).willCancel().show()
-//                        }else{
-//                            AlertView.alert(title: "Error", message: error.localizedDescription, style: UIAlertControllerStyle.alert).willCancel().show()
-//                        }
-//                    }else{
-//                        if Define.DEV_MODE {
-//                            AlertView.alert(title: urlString, message: "\(params)", style: UIAlertControllerStyle.alert).willCancel().show()
-//                        }else{
-//                            AlertView.alert(title: "Error", message: "Can't not connect to sever", style: UIAlertControllerStyle.alert).willCancel().show()
-//                        }
-//                    }
+                    if let error = response.result.error {
+                        if AppDefine.AppInfo.developMode {
+                            AlertView.alert(title: error.localizedDescription, message: "\(urlString) -- \(params)", style: UIAlertControllerStyle.alert).willCancel().show()
+                        }else{
+                            AlertView.alert(title: "Error", message: error.localizedDescription, style: UIAlertControllerStyle.alert).willCancel().show()
+                        }
+                    }else{
+                        if AppDefine.AppInfo.developMode {
+                            AlertView.alert(title: urlString, message: "\(params)", style: UIAlertControllerStyle.alert).willCancel().show()
+                        }else{
+                            AlertView.alert(title: "Error", message: "Can't not connect to sever", style: UIAlertControllerStyle.alert).willCancel().show()
+                        }
+                    }
                 }
             }
         }
