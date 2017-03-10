@@ -24,6 +24,7 @@ PODS:
     - FBSDKCoreKit
   - HCSStarRatingView (1.4.5)
   - IBAnimatable (3.1.3)
+  - ImagePicker (2.0.0)
   - ImageSlideshow (1.1.0):
     - ImageSlideshow/Core (= 1.1.0)
   - ImageSlideshow/Core (1.1.0)
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - FBSDKShareKit
   - HCSStarRatingView
   - IBAnimatable
+  - ImagePicker
   - ImageSlideshow
   - ImageSlideshow/Kingfisher
   - Kingfisher
@@ -73,6 +75,7 @@ SPEC CHECKSUMS:
   FBSDKShareKit: 1b91af62a603d67f392bc7fde63bc4a0705dde31
   HCSStarRatingView: bff3f89314d3b5013ce826ea11897d3129ff6b8c
   IBAnimatable: ad640d47659cbbfa4cf88a127fdc663b2ec4c66a
+  ImagePicker: 81175d36c2852cb543cb4f5d6c19e28f3e8d90eb
   ImageSlideshow: 99addbef1b718272598a07036270e819d03abc17
   Kingfisher: 9950e382c500b6834ce004c7c4131c444e90c3a1
   NVActivityIndicatorView: 075563b3547445ebcff840e3297ce9dd4a23731f
@@ -82,6 +85,6 @@ SPEC CHECKSUMS:
   SwiftMessages: d114d273978678c0dce036f30273865af7303a35
   TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
 
-PODFILE CHECKSUM: 7166921c4320899deb35d6d0c884937dc8059a07
+PODFILE CHECKSUM: a6a7ece5937aab81dcf3b45285f8e620c1651a87
 
 COCOAPODS: 1.1.1

@@ -22,7 +22,7 @@ class LoginViewController: AppViewController, FBSDKLoginButtonDelegate {
     
     // MARK: - Define
     let btnLoginFBButton = FBSDKLoginButton()
-    
+    let viewModel = LoginViewModel()
     // MARK: - Setup
     
     // MARK: - Lifecircle
@@ -47,8 +47,7 @@ class LoginViewController: AppViewController, FBSDKLoginButtonDelegate {
     @IBAction func btnLoginFacebookClick(_ sender: Any) {
         
         if (FBSDKAccessToken.current()) != nil {
-            print(FBSDKAccessToken.current().tokenString)
-            //TODO: Call API
+            loginWithFacebook()
         }else{
             self.btnLoginFBButton.sendActions(for: UIControlEvents.touchUpInside)
         }
@@ -80,11 +79,13 @@ class LoginViewController: AppViewController, FBSDKLoginButtonDelegate {
     
     func loginWithFacebook(){
         if let token = FBSDKAccessToken.current().tokenString{
-//            RequestManager.apiLoginWithFaceBook(access_token: token, completeHandle: { (isSucess, res) in
-//                if isSucess{
-//                    //self.performSegue(withIdentifier: AppName.segue.loginToHome, sender: nil)
-//                }
-//            })
+            viewModel.loginReques(tokenFB: token, phone: nil, pass: nil, complite: { (isSuccess) in
+                if isSuccess{
+                    //GO home
+                }else{
+                    //retry
+                }
+            })
         }
     }
 
