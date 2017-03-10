@@ -44,6 +44,9 @@ class AppDefine {
     // MARK: - cell/item ID
     struct cellId {
         static var idLanguageCell = "idLanguageCell"
+        //Home
+        static var idCellHomeActivity = "idCellHomeActivity"
+        static var idCellHomeDetail = "idCellHomeDetail"
     }
     
 }
