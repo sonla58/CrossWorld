@@ -10,6 +10,7 @@ PODS:
   - Bond (6.0.4):
     - Diff (~> 0.4)
     - ReactiveKit (~> 3.3)
+  - CountryPickerSwift (1.4.0)
   - Diff (0.5.0)
   - DropDown (2)
   - EVReflection (4.5.0):
@@ -24,6 +25,7 @@ PODS:
     - FBSDKCoreKit
   - HCSStarRatingView (1.4.5)
   - IBAnimatable (3.1.3)
+  - ImagePicker (2.0.0)
   - ImageSlideshow (1.1.0):
     - ImageSlideshow/Core (= 1.1.0)
   - ImageSlideshow/Core (1.1.0)
@@ -42,6 +44,7 @@ DEPENDENCIES:
   - Alamofire
   - AttributedTextView
   - Bond
+  - CountryPickerSwift
   - DropDown
   - EVReflection
   - FBSDKCoreKit
@@ -50,6 +53,7 @@ DEPENDENCIES:
   - FBSDKShareKit
   - HCSStarRatingView
   - IBAnimatable
+  - ImagePicker
   - ImageSlideshow
   - ImageSlideshow/Kingfisher
   - Kingfisher
@@ -64,6 +68,7 @@ SPEC CHECKSUMS:
   AttributedTextView: f13dac6daed4800f5e0d4f9e4e6add92e93aa397
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Bond: bc982d559e9c7fe30f50c29bbb5396ded9529699
+  CountryPickerSwift: f6a2202071f2627ea6b22f7bc6b130c6582efca3
   Diff: eceb93a3adf508574ba9b8560da185ace83de055
   DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
   EVReflection: f3ef628809585feefa72bf6a8b1ffd3a7a619bdb
@@ -73,6 +78,7 @@ SPEC CHECKSUMS:
   FBSDKShareKit: 1b91af62a603d67f392bc7fde63bc4a0705dde31
   HCSStarRatingView: bff3f89314d3b5013ce826ea11897d3129ff6b8c
   IBAnimatable: ad640d47659cbbfa4cf88a127fdc663b2ec4c66a
+  ImagePicker: 81175d36c2852cb543cb4f5d6c19e28f3e8d90eb
   ImageSlideshow: 99addbef1b718272598a07036270e819d03abc17
   Kingfisher: 9950e382c500b6834ce004c7c4131c444e90c3a1
   NVActivityIndicatorView: 075563b3547445ebcff840e3297ce9dd4a23731f
@@ -82,6 +88,6 @@ SPEC CHECKSUMS:
   SwiftMessages: d114d273978678c0dce036f30273865af7303a35
   TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
 
-PODFILE CHECKSUM: 7166921c4320899deb35d6d0c884937dc8059a07
+PODFILE CHECKSUM: 502096f70c5601f8eadb5137f3280a98ed7f540a
 
 COCOAPODS: 1.1.1

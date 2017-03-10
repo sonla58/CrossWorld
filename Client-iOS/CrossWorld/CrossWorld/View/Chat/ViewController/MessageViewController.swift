@@ -7,10 +7,10 @@
 //
 
 import UIKit
+import ImagePicker
 
-class MessageViewController: UIViewController , UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
-    
-    
+class MessageViewController: UIViewController , UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, ImagePickerDelegate {
+    // MARK: - Outlet
     @IBOutlet weak var constrainTextViewHeight: NSLayoutConstraint!
     @IBOutlet weak var constrainTableViewBottom: NSLayoutConstraint!
     @IBOutlet weak var lbUserName: UILabel!
@@ -19,39 +19,41 @@ class MessageViewController: UIViewController , UITableViewDataSource, UITableVi
     @IBOutlet weak var btnSend: UIButton!
     @IBOutlet weak var viewBottom: UIView!
     @IBOutlet weak var tvMessage: UITextView!
+
     
-    //var user: User?
-    //var pathMessage: String?
+    // MARK: - Declare
     var listMessenger = Messenger().fakeListMessage()
-    //var uid: String? // uid cua nguoi dang chat voi minh
     var firstOpen = true
-    let refreshControl = UIRefreshControl()
     var pathSequece = true
     var isFriend = true
+
     
+    // MARK: - Define
+    let refreshControl = UIRefreshControl()
+    let imagePickerController = ImagePickerController()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //        if let name = user?.name {
-        //            self.lbUserName.text = name
-        //        }else{
+    // MARK: - Setup
+    func setup(){
         self.lbUserName.text = "some one"
-        // }
-        //prepareSendNewMessenger(to: uid!)
-        initTableMessage()
-        
         tvMessage.delegate = self
+        imagePickerController.delegate = self
+        
         //Keyboard show hide notification register
         NotificationCenter.default.addObserver(self, selector:#selector(MessageViewController.keyboardWillShown(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector:#selector(MessageViewController.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
+    
+    // MARK: - Lifecircle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        initTableMessage()
+        setup()
+        
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
     }
     
     func initTableMessage(){
@@ -67,49 +69,10 @@ class MessageViewController: UIViewController , UITableViewDataSource, UITableVi
     }
     
     func refresh(_ sender:AnyObject){
-        loadMoreMessenger()
+        //loadMoreMessenger()
         refreshControl.endRefreshing()
     }
     
-    func prepareSendNewMessenger(to Uid: String){
-        
-        //        ref.child("messenger").observeSingleEvent(of: FIRDataEventType.value, with: { (data) in
-        //
-        //            if let da = data.value as? NSDictionary {
-        //                let allKey = da.allKeys
-        //                for key in allKey {
-        //                    let keyWord = key as! String
-        //                    if keyWord.contains(Uid) && keyWord.contains(User.sharedInstance.userId!){
-        //                        self.pathMessage = keyWord
-        //                        //TODO: load all messenger
-        //
-        //                        self.pathMessage = keyWord
-        //                        //self.loadMessengerFormNow()
-        //
-        //                    } else{
-        //                        if self.pathSequece{
-        //                            self.pathMessage = "\(unwrappingThisString(User.sharedInstance.userId))-\(Uid)"
-        //
-        //                        }else{
-        //                            self.pathMessage = "\(Uid)-\(unwrappingThisString(User.sharedInstance.userId))"
-        //
-        //                        }
-        //                    }
-        //                }
-        //                self.reloadMessengerTable()
-        //
-        //            }else{
-        //                if self.pathSequece{
-        //                    self.pathMessage = "\(unwrappingThisString(User.sharedInstance.userId))-\(Uid)"
-        //
-        //                }else{
-        //                    self.pathMessage = "\(Uid)-\(unwrappingThisString(User.sharedInstance.userId))"
-        //
-        //                }
-        //                self.reloadMessengerTable()
-        //            }
-        //        })
-    }
     
     func sentNewMessage(_ content: String){
         
@@ -119,70 +82,6 @@ class MessageViewController: UIViewController , UITableViewDataSource, UITableVi
         //        updateLastMessenger(content)
     }
     
-    func updateLastMessenger(_ content: String){
-        //        if isFriend{
-        //            ref.child("users").child(User.sharedInstance.userId!).child("friends").child(uid!).setValue(content)
-        //            ref.child("users").child(uid!).child("friends").child(User.sharedInstance.userId!).setValue(content)
-        //        }else{
-        //            ref.child("users").child(User.sharedInstance.userId!).child("unknowUsers").child(uid!).setValue(content)
-        //            ref.child("users").child(uid!).child("unknowUsers").child(User.sharedInstance.userId!).setValue(content)
-        //      }
-    }
-    
-    func loadMessengerFormNow(){
-        //        let listMessenger: FIRDatabaseQuery = ref.child("messenger").child(self.pathMessage!).queryLimited(toLast: 2)
-        //        listMessenger.observeSingleEvent(of: FIRDataEventType.value, with:  { (dataSnapsoft) in
-        //            if let data = dataSnapsoft.value as? NSDictionary{
-        //                self.listMessenger = Messenger.parseListMessenger(data)
-        //                self.reloadMessengerTable()
-        //            }
-        //        })
-    }
-    
-    func reloadMessengerTable(){
-        //        print( " listMessenger count \(listMessenger.count)" )
-        //        self.tbMessage.reloadData()
-        //
-        //        ref.child("messenger").child(pathMessage!).queryLimited(toLast: 10).observe(.childAdded, with: { (snapshot) -> Void in
-        //            print(snapshot)
-        //
-        //            if let data = snapshot.value as? NSDictionary{
-        //                let item = Messenger.parseNewMesenger(data)
-        //                item.id = snapshot.key
-        //                self.listMessenger.append(item)
-        //                let index = NSIndexPath.init(row: self.listMessenger.count - 1, section: 0)
-        //                self.tbMessage.insertRows(at: [index as IndexPath], with: UITableViewRowAnimation.automatic)
-        //                self.tbMessage.scrollToRow(at: index as IndexPath, at: .none, animated: true)
-        //            }
-        //        })
-    }
-    
-    func loadMoreMessenger(){
-        //        let lastIndex = listMessenger.first?.id
-        //        print(listMessenger.first?.content as Any)
-        //        print(lastIndex as Any)
-        //        let nextPath = ref.child("messenger").child(self.pathMessage!).queryOrderedByKey().queryEnding(atValue: lastIndex!).queryLimited(toLast: 50)
-        //
-        //        nextPath.observeSingleEvent(of: FIRDataEventType.value, with:  { (dataSnapsoft) in
-        //            print(dataSnapsoft)
-        //            print(dataSnapsoft.children)
-        //
-        //            if let data = dataSnapsoft.value as? NSDictionary{
-        //                var newMessenger = Messenger.parseListMessenger(data)
-        //                for item in self.listMessenger{
-        //                    newMessenger.append(item)
-        //                }
-        //                self.listMessenger = newMessenger
-        //                self.tbMessage.reloadData()
-        //
-        //                if self.listMessenger.count != 0 {
-        //                    let indexPath = IndexPath(row: 0, section: 0)
-        //                    self.tbMessage.scrollToRow(at: indexPath, at: .top, animated: true)
-        //                }
-        //            }
-        //        })
-        
-    }
     
     //MARK: - Keyboard
     func keyboardWillShown(_ notification: Notification) {
@@ -235,6 +134,9 @@ class MessageViewController: UIViewController , UITableViewDataSource, UITableVi
         }
     }
     @IBAction func btnFileClick(_ sender: AnyObject) {
+        
+        self.present(imagePickerController, animated: true, completion: nil)
+
     }
     // MARK: - UITextView Delegate
     // MARK: - UITableView Delegate, Datasource Methods
@@ -307,5 +209,18 @@ class MessageViewController: UIViewController , UITableViewDataSource, UITableVi
             self.constrainTextViewHeight.constant = self.tvMessage.contentSize.height
             self.view.layoutIfNeeded()
         }
+    }
+    
+    //MARK: Image picker delegate
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        
+    }
+    
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        imagePickerController.dismiss(animated: true, completion: nil)
+    }
+    
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        
     }
 }
