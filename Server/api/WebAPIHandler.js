@@ -13,6 +13,7 @@ var WebAPIHandler = {
         router.use("/register", require('./Register'));
         // router.use("/login", require('./Login'));
         // router.use("/logout", require('./Logout'));
+        router.use("/config", require('./Config'));
 
         WebAPIHandler.router = router;
 

@@ -15,7 +15,7 @@
 
     Const.resError = 100;
     Const.resDuplicatePhoneNumber = 101;
-    Const.resDuplicateEmail = 102;
+    Const.resDuplicateUsername = 102;
 
     Const.resPhoneNumIncorrect = 110;
     Const.resVerifyNumIncorrect = 111;
@@ -116,8 +116,14 @@
     // Register
     Const.msgRegisterSuccess = 'Register Success';
     Const.msgRegisterFail = 'Register Fail';
+
+
+    // Check account
+    Const.msgCheckAccountSuccess = 'CheckAccount Success';
+    Const.msgCheckAccountFail = 'CheckAccount Fail';
     Const.msgDuplicatePhoneNumber = 'This phone number already used';
-    Const.msgDuplicateEmail = 'This email already used';
+    Const.msgDuplicateUsername = 'This username already used';
+
 
     Const.msgVerifySuccess = 'Verify Success';
     Const.msgVerifyNumberIncorrect = 'Verify Number Incorrect';

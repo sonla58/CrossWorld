@@ -10,3 +10,5 @@ ChatHandle.prototype.attach = function (io, socket) {
     })
 
 };
+
+module['exports'] = new ChatHandle();
