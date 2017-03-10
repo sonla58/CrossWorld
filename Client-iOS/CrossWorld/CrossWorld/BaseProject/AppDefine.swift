@@ -25,7 +25,8 @@ class AppDefine {
     
     // MARK: - Segue ID
     struct Segue {
-        
+        // Login/Register
+        static var registerToDetail = "registerToDetail"
     }
     
     // MARK: - Define
