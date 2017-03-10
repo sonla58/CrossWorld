@@ -2,27 +2,22 @@ var Sequelize = require('sequelize');
 var db = require('../config/database.js');
 var sequelize = new Sequelize(db.database, db.user, db.password, db);
 
-var Chat = undefined;
+var UserLanguage = undefined;
 module.exports.connect = function (callback) {
-    User = sequelize.define('Chat', {
-        chat_id: {
+    UserLanguage = sequelize.define('UserLanguage', {
+        user_id: {
             type: Sequelize.INTEGER,
             primaryKey: true
         },
-        native_user: {
-            type: Sequelize.STRING
-        },
-        foreign_user: {
-            type: Sequelize.STRING
-        },
-        type: {
-            type: Sequelize.BOOLEAN
+        language_id: {
+            type: Sequelize.STRING,
+            primaryKey: true
         }
     }, {
         timestamps: false,
         createAt: false,
         updateAt: false,
-        tableName: 'chat'
+        tableName: 'user_language'
     });
 };
 
@@ -31,7 +26,7 @@ exports.disconnect = function (callback) {
 };
 
 exports.create = function (data, callback) {
-    var itemAttach = Chat.build(data);
+    var itemAttach = UserLanguage.build(data);
     itemAttach.save().then(function (row) {
         callback(null, row);
     }).catch(function (err) {
@@ -40,7 +35,7 @@ exports.create = function (data, callback) {
 };
 
 exports.findAll = function (callback) {
-    Chat.findAll({
+    UserLanguage.findAll({
         where: {}
     }).then(function (rows) {
         if (rows) {
@@ -53,10 +48,10 @@ exports.findAll = function (callback) {
     })
 };
 
-exports.findById = function (id, callback) {
-    Chat.findOne({
+exports.findByUserId = function (id, callback) {
+    UserLanguage.findOne({
         where: {
-            chat_id: id
+            user_id: id
         }
     }).then(function (row) {
         if (row) {
@@ -70,8 +65,8 @@ exports.findById = function (id, callback) {
 };
 
 exports.update = function (data, callback) {
-    Chat.findOne({
-        where: {chat_id: data.chat_id}
+    UserLanguage.findOne({
+        where: {user_id: data.user_id}
     }).then(function (row) {
         if (row) {
             row.update(data).then(function (r) {
