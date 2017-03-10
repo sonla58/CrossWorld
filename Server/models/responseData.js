@@ -7,7 +7,7 @@ exports.create = function(success, message, error_code, token, user_id) {
         "error_code": error_code,
         "data": {
             "token": token,
-            "user_id": user_id,
+            "user_id": user_id
         }
     };
     return responseData;
