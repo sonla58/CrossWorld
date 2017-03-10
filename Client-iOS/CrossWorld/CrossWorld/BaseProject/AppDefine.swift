@@ -30,6 +30,10 @@ class AppDefine {
         static var registerToDetail = "registerToDetail"
         static var loginToRegister = "loginToRegister"
         static let conversationToChat = "conversationToChat"
+        static var registerDetailToLanguage = "registerDetailToLanguage"
+        static var languageToHome = "languageToHome"
+        static var loginDetailToHome = "loginDetailToHome"
+        static var loginToHome = "loginToHome"
     }
     
     // MARK: - Define
@@ -39,7 +43,7 @@ class AppDefine {
     
     // MARK: - cell/item ID
     struct cellId {
-        
+        static var idLanguageCell = "idLanguageCell"
     }
     
 }

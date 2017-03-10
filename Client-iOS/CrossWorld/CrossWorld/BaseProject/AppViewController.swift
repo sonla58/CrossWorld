@@ -75,6 +75,8 @@ class AppViewController: UIViewController, NVActivityIndicatorViewable {
             break
         case .normal:
             self.navigationController?.setNavigationBarHidden(false, animated: false)
+            self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+            self.navigationController?.navigationBar.shadowImage = nil
             break
         case .transparent:
             self.navigationController?.setNavigationBarHidden(false, animated: false)
