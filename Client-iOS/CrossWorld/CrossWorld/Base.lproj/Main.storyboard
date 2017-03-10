@@ -308,7 +308,7 @@
                                                 </constraints>
                                                 <color key="textColor" red="0.34901960780000002" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="inactiveBorderColor">
                                                         <color key="value" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -335,7 +335,7 @@
                                                 </constraints>
                                                 <color key="textColor" red="0.34901960780000002" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="inactiveBorderColor">
                                                         <color key="value" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -518,14 +518,14 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Xác nhận mật khẩu"/>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ms0-Wn-zAf" customClass="ASTextField" customModule="CrossWorld" customModuleProvider="target">
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ms0-Wn-zAf" customClass="ASTextField" customModule="CrossWorld" customModuleProvider="target">
                                                 <rect key="frame" x="24" y="203" width="327" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="hiY-st-KoJ"/>
                                                 </constraints>
                                                 <color key="textColor" red="0.34901960780000002" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="inactiveBorderColor">
                                                         <color key="value" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -545,14 +545,14 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Bạn đến từ..."/>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YRY-KM-bTI" customClass="ASTextField" customModule="CrossWorld" customModuleProvider="target">
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YRY-KM-bTI" customClass="ASTextField" customModule="CrossWorld" customModuleProvider="target">
                                                 <rect key="frame" x="24" y="260" width="327" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="1b8-20-rCF"/>
                                                 </constraints>
                                                 <color key="textColor" red="0.34901960780000002" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="inactiveBorderColor">
                                                         <color key="value" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -572,14 +572,25 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Ngày sinh"/>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2Y-zx-vTr">
+                                                <rect key="frame" x="24" y="203" width="327" height="24"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTJ-OG-WG4">
+                                                <rect key="frame" x="24" y="260" width="327" height="24"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="iyA-sj-0am" firstAttribute="leading" secondItem="ZxK-sD-IL4" secondAttribute="leadingMargin" constant="16" id="42X-WA-gTD"/>
+                                            <constraint firstItem="dTJ-OG-WG4" firstAttribute="leading" secondItem="YRY-KM-bTI" secondAttribute="leading" id="5LA-D3-tLr"/>
                                             <constraint firstItem="2pc-9t-QsK" firstAttribute="leading" secondItem="ZxK-sD-IL4" secondAttribute="leadingMargin" constant="16" id="9XJ-4T-XpE"/>
+                                            <constraint firstItem="dTJ-OG-WG4" firstAttribute="trailing" secondItem="YRY-KM-bTI" secondAttribute="trailing" id="AXw-CW-Lfe"/>
                                             <constraint firstAttribute="trailing" secondItem="o6M-lS-7HU" secondAttribute="trailing" constant="24" id="Ba8-Vo-2pf"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="2pc-9t-QsK" secondAttribute="trailing" constant="16" id="Bi4-mo-mlu"/>
+                                            <constraint firstItem="U2Y-zx-vTr" firstAttribute="leading" secondItem="ms0-Wn-zAf" secondAttribute="leading" id="DK0-Oh-9j3"/>
                                             <constraint firstItem="ms0-Wn-zAf" firstAttribute="leading" secondItem="ZxK-sD-IL4" secondAttribute="leading" constant="24" id="ETE-hp-qKV"/>
+                                            <constraint firstItem="U2Y-zx-vTr" firstAttribute="top" secondItem="ms0-Wn-zAf" secondAttribute="top" id="HD8-2j-KtS"/>
+                                            <constraint firstItem="U2Y-zx-vTr" firstAttribute="trailing" secondItem="ms0-Wn-zAf" secondAttribute="trailing" id="JeT-84-slL"/>
                                             <constraint firstItem="iyA-sj-0am" firstAttribute="top" secondItem="2pc-9t-QsK" secondAttribute="bottom" constant="34" id="KMo-fc-H1G"/>
                                             <constraint firstItem="YRY-KM-bTI" firstAttribute="leading" secondItem="ZxK-sD-IL4" secondAttribute="leading" constant="24" id="L6H-Ta-j0Q"/>
                                             <constraint firstAttribute="trailing" secondItem="YRY-KM-bTI" secondAttribute="trailing" constant="24" id="POs-ny-kt5"/>
@@ -587,8 +598,11 @@
                                             <constraint firstAttribute="trailing" secondItem="y7G-Cx-uSe" secondAttribute="trailing" id="ViY-pJ-OSP"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="iyA-sj-0am" secondAttribute="trailing" constant="16" id="YmL-9m-U5l"/>
                                             <constraint firstAttribute="trailing" secondItem="ms0-Wn-zAf" secondAttribute="trailing" constant="24" id="dgX-NL-FVB"/>
+                                            <constraint firstItem="dTJ-OG-WG4" firstAttribute="bottom" secondItem="YRY-KM-bTI" secondAttribute="bottom" id="e8e-gZ-N3S"/>
+                                            <constraint firstItem="dTJ-OG-WG4" firstAttribute="top" secondItem="YRY-KM-bTI" secondAttribute="top" id="iTq-cD-F39"/>
                                             <constraint firstItem="ms0-Wn-zAf" firstAttribute="top" secondItem="o6M-lS-7HU" secondAttribute="bottom" constant="33" id="kn3-Hk-NF1"/>
                                             <constraint firstItem="y7G-Cx-uSe" firstAttribute="leading" secondItem="ZxK-sD-IL4" secondAttribute="leading" id="pEi-qx-PYf"/>
+                                            <constraint firstItem="U2Y-zx-vTr" firstAttribute="bottom" secondItem="ms0-Wn-zAf" secondAttribute="bottom" id="qXY-le-ZYN"/>
                                             <constraint firstItem="YRY-KM-bTI" firstAttribute="top" secondItem="ms0-Wn-zAf" secondAttribute="bottom" constant="33" id="qe6-02-cpK"/>
                                             <constraint firstItem="o6M-lS-7HU" firstAttribute="top" secondItem="iyA-sj-0am" secondAttribute="bottom" constant="33" id="sMb-Uv-0cI"/>
                                             <constraint firstItem="o6M-lS-7HU" firstAttribute="leading" secondItem="ZxK-sD-IL4" secondAttribute="leading" constant="24" id="xrJ-yT-Nkq"/>
@@ -615,6 +629,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnBirthday" destination="dTJ-OG-WG4" id="wFv-4V-Vl2"/>
+                        <outlet property="btnCountry" destination="U2Y-zx-vTr" id="qOL-Uy-lcO"/>
                         <outlet property="btnNext" destination="y7G-Cx-uSe" id="Hcd-Oq-imS"/>
                         <outlet property="txtBirthday" destination="YRY-KM-bTI" id="Btp-4S-n4H"/>
                         <outlet property="txtCountry" destination="ms0-Wn-zAf" id="Igk-pO-5rT"/>

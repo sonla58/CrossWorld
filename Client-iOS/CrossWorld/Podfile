@@ -19,5 +19,6 @@ target 'CrossWorld' do
   pod 'ImageSlideshow/Kingfisher'
   pod 'AttributedTextView'
   pod 'SwiftDate'
+  pod 'CountryPickerSwift'
 
 end

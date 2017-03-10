@@ -4,6 +4,7 @@ PODS:
   - Bond (6.0.4):
     - Diff (~> 0.4)
     - ReactiveKit (~> 3.3)
+  - CountryPickerSwift (1.4.0)
   - Diff (0.5.0)
   - DropDown (2)
   - EVReflection (4.5.0):
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - Alamofire
   - AttributedTextView
   - Bond
+  - CountryPickerSwift
   - DropDown
   - EVReflection
   - HCSStarRatingView
@@ -46,6 +48,7 @@ SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AttributedTextView: f13dac6daed4800f5e0d4f9e4e6add92e93aa397
   Bond: bc982d559e9c7fe30f50c29bbb5396ded9529699
+  CountryPickerSwift: f6a2202071f2627ea6b22f7bc6b130c6582efca3
   Diff: eceb93a3adf508574ba9b8560da185ace83de055
   DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
   EVReflection: f3ef628809585feefa72bf6a8b1ffd3a7a619bdb
@@ -60,6 +63,6 @@ SPEC CHECKSUMS:
   SwiftMessages: d114d273978678c0dce036f30273865af7303a35
   TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
 
-PODFILE CHECKSUM: 6dc8a8b31fed09cfbdb8e46dfbfe55f531078472
+PODFILE CHECKSUM: 6c310f42811e8553ee3ff48fd47f08cd3a8804bf
 
 COCOAPODS: 1.1.1
