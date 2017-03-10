@@ -30,12 +30,6 @@ class LoginViewController: AppViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         creatFBLoginButton()
-        
-        if (FBSDKAccessToken.current()) != nil {
-            print(FBSDKAccessToken.current().tokenString)
-        }else{
-            self.btnLoginFBButton.sendActions(for: UIControlEvents.touchUpInside)
-        }
 
         // Do any additional setup after loading the view.
     }
@@ -50,13 +44,15 @@ class LoginViewController: AppViewController, FBSDKLoginButtonDelegate {
         self.typeViewController = .root
         self.typeNavigationBar = .hidden
     }
-    @IBAction func btnLoginFBclick(_ sender: Any) {
-        self.btnLoginFBButton.sendActions(for: .touchUpInside)
-
-    }
-    
     @IBAction func btnLoginFacebookClick(_ sender: Any) {
-        self.btnLoginFBButton.sendActions(for: .touchUpInside)
+        
+        if (FBSDKAccessToken.current()) != nil {
+            print(FBSDKAccessToken.current().tokenString)
+            //TODO: Call API
+        }else{
+            self.btnLoginFBButton.sendActions(for: UIControlEvents.touchUpInside)
+        }
+
     }
     
     func creatFBLoginButton(){
@@ -72,9 +68,24 @@ class LoginViewController: AppViewController, FBSDKLoginButtonDelegate {
     
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        
-        print(FBSDKAccessToken.current().tokenString)
-
-        
+        if error == nil {
+            if result.isCancelled {
+                
+            }else{
+                print(FBSDKAccessToken.current().tokenString)
+                loginWithFacebook()
+            }
+        }
     }
+    
+    func loginWithFacebook(){
+        if let token = FBSDKAccessToken.current().tokenString{
+//            RequestManager.apiLoginWithFaceBook(access_token: token, completeHandle: { (isSucess, res) in
+//                if isSucess{
+//                    //self.performSegue(withIdentifier: AppName.segue.loginToHome, sender: nil)
+//                }
+//            })
+        }
+    }
+
 }
