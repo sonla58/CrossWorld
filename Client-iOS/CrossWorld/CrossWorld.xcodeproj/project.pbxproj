@@ -15,6 +15,8 @@
 		ACEFC8F51E72C7AE00C39086 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC8F41E72C7AE00C39086 /* User.swift */; };
 		ACEFC8F71E72C7C400C39086 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC8F61E72C7C400C39086 /* Utils.swift */; };
 		ACEFC8FA1E72C7E700C39086 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC8F91E72C7E700C39086 /* LoginViewController.swift */; };
+		ACEFC8FD1E72C99500C39086 /* AppDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC8FC1E72C99500C39086 /* AppDefine.swift */; };
+		ACEFC8FF1E72C9DD00C39086 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC8FE1E72C9DD00C39086 /* AppViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		ACEFC8F41E72C7AE00C39086 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ACEFC8F61E72C7C400C39086 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		ACEFC8F91E72C7E700C39086 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ACEFC8FC1E72C99500C39086 /* AppDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDefine.swift; sourceTree = "<group>"; };
+		ACEFC8FE1E72C9DD00C39086 /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		ACEFC8CF1E72C62A00C39086 /* CrossWorld */ = {
 			isa = PBXGroup;
 			children = (
+				ACEFC8FB1E72C98900C39086 /* BaseProject */,
 				ACEFC8E51E72C78900C39086 /* Base.lproj */,
 				ACEFC8EB1E72C78900C39086 /* Model */,
 				ACEFC8EC1E72C78900C39086 /* Resource */,
@@ -119,6 +124,15 @@
 				ACEFC8F91E72C7E700C39086 /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		ACEFC8FB1E72C98900C39086 /* BaseProject */ = {
+			isa = PBXGroup;
+			children = (
+				ACEFC8FC1E72C99500C39086 /* AppDefine.swift */,
+				ACEFC8FE1E72C9DD00C39086 /* AppViewController.swift */,
+			);
+			path = BaseProject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +210,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACEFC8FF1E72C9DD00C39086 /* AppViewController.swift in Sources */,
+				ACEFC8FD1E72C99500C39086 /* AppDefine.swift in Sources */,
 				ACEFC8FA1E72C7E700C39086 /* LoginViewController.swift in Sources */,
 				ACEFC8F51E72C7AE00C39086 /* User.swift in Sources */,
 				ACEFC8EF1E72C78900C39086 /* AppDelegate.swift in Sources */,
