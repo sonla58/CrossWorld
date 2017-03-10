@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2E2CD2C07DD80B3E57B74FC2 /* Pods_CrossWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F521D370B99DB0FB27A46F83 /* Pods_CrossWorld.framework */; };
+		AC4335BD1E72D19E00EFBF96 /* LoginDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4335BC1E72D19E00EFBF96 /* LoginDetailViewController.swift */; };
+		ACB47C3F1E72D2D10059E114 /* ASTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C3E1E72D2D10059E114 /* ASTextField.swift */; };
+		ACB47C421E72D8AF0059E114 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C411E72D8AF0059E114 /* RegisterViewController.swift */; };
+		ACB47C451E72DC380059E114 /* RegisterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C441E72DC380059E114 /* RegisterDetailViewController.swift */; };
 		ACEFC8EF1E72C78900C39086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC8E31E72C78900C39086 /* AppDelegate.swift */; };
 		ACEFC8F01E72C78900C39086 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC8E41E72C78900C39086 /* Assets.xcassets */; };
 		ACEFC8F11E72C78900C39086 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC8E61E72C78900C39086 /* LaunchScreen.storyboard */; };
@@ -22,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		3EC5D6D859E30ED5168ADDCD /* Pods-CrossWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossWorld.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrossWorld/Pods-CrossWorld.debug.xcconfig"; sourceTree = "<group>"; };
+		AC4335BC1E72D19E00EFBF96 /* LoginDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDetailViewController.swift; sourceTree = "<group>"; };
+		ACB47C3E1E72D2D10059E114 /* ASTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTextField.swift; sourceTree = "<group>"; };
+		ACB47C411E72D8AF0059E114 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		ACB47C441E72DC380059E114 /* RegisterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDetailViewController.swift; sourceTree = "<group>"; };
 		ACEFC8CD1E72C62A00C39086 /* CrossWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrossWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEFC8E21E72C78900C39086 /* CrossWorld-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CrossWorld-Bridging-Header.h"; path = "../CrossWorld-Bridging-Header.h"; sourceTree = "<group>"; };
 		ACEFC8E31E72C78900C39086 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +58,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC4335BB1E72D18800EFBF96 /* LoginDetail */ = {
+			isa = PBXGroup;
+			children = (
+				AC4335BC1E72D19E00EFBF96 /* LoginDetailViewController.swift */,
+			);
+			path = LoginDetail;
+			sourceTree = "<group>";
+		};
+		ACB47C3D1E72D2C60059E114 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				ACB47C3E1E72D2D10059E114 /* ASTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		ACB47C401E72D8670059E114 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				ACB47C411E72D8AF0059E114 /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		ACB47C431E72DC210059E114 /* RegisterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				ACB47C441E72DC380059E114 /* RegisterDetailViewController.swift */,
+			);
+			path = RegisterDetail;
+			sourceTree = "<group>";
+		};
 		ACEFC8C41E72C62A00C39086 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +152,7 @@
 		ACEFC8ED1E72C78900C39086 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				ACB47C3D1E72D2C60059E114 /* TextField */,
 				ACEFC8F61E72C7C400C39086 /* Utils.swift */,
 			);
 			path = Utils;
@@ -120,6 +161,9 @@
 		ACEFC8EE1E72C78900C39086 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ACB47C431E72DC210059E114 /* RegisterDetail */,
+				ACB47C401E72D8670059E114 /* Register */,
+				AC4335BB1E72D18800EFBF96 /* LoginDetail */,
 				ACEFC8F81E72C7DB00C39086 /* Login */,
 			);
 			path = View;
@@ -260,7 +304,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7C186D2DA2DFE6D0C65408DA /* [CP] Embed Pods Frameworks */ = {
@@ -285,11 +329,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB47C421E72D8AF0059E114 /* RegisterViewController.swift in Sources */,
 				ACEFC8FF1E72C9DD00C39086 /* AppViewController.swift in Sources */,
+				ACB47C3F1E72D2D10059E114 /* ASTextField.swift in Sources */,
 				ACEFC8FD1E72C99500C39086 /* AppDefine.swift in Sources */,
+				AC4335BD1E72D19E00EFBF96 /* LoginDetailViewController.swift in Sources */,
 				ACEFC8FA1E72C7E700C39086 /* LoginViewController.swift in Sources */,
 				ACEFC8F51E72C7AE00C39086 /* User.swift in Sources */,
 				ACEFC8EF1E72C78900C39086 /* AppDelegate.swift in Sources */,
+				ACB47C451E72DC380059E114 /* RegisterDetailViewController.swift in Sources */,
 				ACEFC8F71E72C7C400C39086 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,6 +507,7 @@
 				ACEFC8E11E72C62A00C39086 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
