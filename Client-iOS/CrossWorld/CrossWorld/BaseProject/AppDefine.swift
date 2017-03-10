@@ -11,7 +11,7 @@ import UIKit
 class AppDefine {
     // MARK: - App Info
     struct AppInfo {
-        static var developMode = false
+        static var developMode = true
     }
     
     struct AppColor {
