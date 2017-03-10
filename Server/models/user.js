@@ -48,8 +48,7 @@ module.exports.connect = function (callback) {
             type: Sequelize.DATE
         },
         birthday: {
-            type: Sequelize.DATE,
-
+            type: Sequelize.DATE
         }
     }, {
         timestamps: false,

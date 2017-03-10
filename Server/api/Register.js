@@ -23,8 +23,10 @@ Register.prototype.attach = function (router) {
             user_name: req.body.user_name,
             password: req.body.password,
             full_name: req.body.full_name,
-            facebook_token: req.body.facebook_token,
+            birthday: req.body.birthday || null,
+            facebook_id: req.body.facebook_id || null,
             country_id: req.body.country_id,
+            language_id: req.body.language_id
         };
         
         console.log(data);
@@ -36,58 +38,19 @@ Register.prototype.attach = function (router) {
                         res.json(responseData.create(Const.successFalse, Const.msgRegisterFail, Const.resError));
                     } else {
                         data.password = hash;
-                        user.findByPhone(data.phone_number, function (err, result) {
+                        user.create(data, function (err) {
                             if (err) {
                                 console.log(err);
                                 res.json(responseData.create(Const.successFalse, Const.msgRegisterFail, Const.resError));
                             } else {
-                                if (result) {
-                                    console.log(Const.msgDuplicatePhoneNumber);
-                                    res.json(responseData.create(Const.successFalse, Const.msgDuplicatePhoneNumber, Const.resDuplicatePhoneNumber));
-                                } else {
-                                    user.create(data, function (err, r) {
-                                        if (err) {
-                                            console.log(err);
-                                            res.json(responseData.create(Const.successFalse, Const.msgRegisterFail, Const.resError));
-                                        } else {
-                                            console.log(Const.msgRegisterSuccess);
-                                            res.json(responseData.create(Const.successTrue, Const.msgRegisterSuccess));
-                                        }
-                                    });
-                                }
+                                console.log('Register success');
+                                res.json(responseData.create(Const.successTrue, Const.msgRegisterSuccess, Const.resNoErrorCode));
                             }
-                        });
+                        })
                     }
                 })
             });
         }
-    });
-
-	router.post('/check-username', function (req, res) {
-        console.log('check username');
-        user.connect();
-
-        user.findByUserName(req.body.user_name, function (err, result) {
-            if (err) {
-                console.log(err);
-                res.json(responseData.create(Const.successFalse, Const.msgRegisterFail, Const.resError));
-            } else {
-                if (result) {
-                    console.log(Const.msgDuplicatePhoneNumber);
-                    res.json(responseData.create(Const.successFalse, Const.msgDuplicatePhoneNumber, Const.resDuplicatePhoneNumber));
-                } else {
-                    user.create(data, function (err, r) {
-                        if (err) {
-                            console.log(err);
-                            res.json(responseData.create(Const.successFalse, Const.msgRegisterFail, Const.resError));
-                        } else {
-                            console.log(Const.msgRegisterSuccess);
-                            res.json(responseData.create(Const.successTrue, Const.msgRegisterSuccess));
-                        }
-                    });
-                }
-            }
-        });
     });
 };
 
