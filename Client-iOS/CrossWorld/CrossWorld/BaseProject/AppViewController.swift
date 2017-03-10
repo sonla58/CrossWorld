@@ -160,6 +160,7 @@ extension AppViewController {
     }
     
     func leftNaviButtonTapped() {
+        self.view.endEditing(true)
         switch leftButtonType {
         case .menu:
             fatalError("You need overide this method.")
@@ -197,6 +198,7 @@ extension AppViewController {
     }
     
     func rightNaviButtonTapped() {
+        self.view.endEditing(true)
         switch rightButtonType {
         case .cancel:
             if typeViewController == .present {
