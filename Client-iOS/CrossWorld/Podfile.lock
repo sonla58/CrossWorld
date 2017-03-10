@@ -1,6 +1,12 @@
 PODS:
   - Alamofire (4.4.0)
   - AttributedTextView (0.5.0)
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
   - Bond (6.0.4):
     - Diff (~> 0.4)
     - ReactiveKit (~> 3.3)
@@ -10,6 +16,13 @@ PODS:
   - EVReflection (4.5.0):
     - EVReflection/Core (= 4.5.0)
   - EVReflection/Core (4.5.0)
+  - FBSDKCoreKit (4.20.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.20.0):
+    - FBSDKCoreKit
+  - FBSDKMessengerShareKit (1.3.2)
+  - FBSDKShareKit (4.20.0):
+    - FBSDKCoreKit
   - HCSStarRatingView (1.4.5)
   - IBAnimatable (3.1.3)
   - ImageSlideshow (1.1.0):
@@ -33,6 +46,10 @@ DEPENDENCIES:
   - CountryPickerSwift
   - DropDown
   - EVReflection
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKMessengerShareKit
+  - FBSDKShareKit
   - HCSStarRatingView
   - IBAnimatable
   - ImageSlideshow
@@ -47,11 +64,16 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AttributedTextView: f13dac6daed4800f5e0d4f9e4e6add92e93aa397
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Bond: bc982d559e9c7fe30f50c29bbb5396ded9529699
   CountryPickerSwift: f6a2202071f2627ea6b22f7bc6b130c6582efca3
   Diff: eceb93a3adf508574ba9b8560da185ace83de055
   DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
   EVReflection: f3ef628809585feefa72bf6a8b1ffd3a7a619bdb
+  FBSDKCoreKit: 2d16979b28fe28c2b95af0d275ad5f9703c6c8de
+  FBSDKLoginKit: a9d9391506c687e2304a590bf9312837fce7f375
+  FBSDKMessengerShareKit: 41c0b1a667d685c9433f993eb9611b3d5074e1cb
+  FBSDKShareKit: 1b91af62a603d67f392bc7fde63bc4a0705dde31
   HCSStarRatingView: bff3f89314d3b5013ce826ea11897d3129ff6b8c
   IBAnimatable: ad640d47659cbbfa4cf88a127fdc663b2ec4c66a
   ImageSlideshow: 99addbef1b718272598a07036270e819d03abc17
@@ -63,6 +85,6 @@ SPEC CHECKSUMS:
   SwiftMessages: d114d273978678c0dce036f30273865af7303a35
   TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
 
-PODFILE CHECKSUM: 6c310f42811e8553ee3ff48fd47f08cd3a8804bf
+PODFILE CHECKSUM: 1980d023ed10c5396ed0d97340636064ae4d3a28
 
 COCOAPODS: 1.1.1

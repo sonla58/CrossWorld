@@ -419,7 +419,7 @@
 				ACB47C421E72D8AF0059E114 /* RegisterViewController.swift in Sources */,
 				464EE8B91E72EC7600044C70 /* MessageViewController.swift in Sources */,
 				ACEFC8FF1E72C9DD00C39086 /* AppViewController.swift in Sources */,
-				ACB47C3F1E72D2D10059E114 /* ASTextField.swift in Sources */
+				ACB47C3F1E72D2D10059E114 /* ASTextField.swift in Sources */,
 				ACB47C471E72EBD00059E114 /* AppAccess.swift in Sources */,
 				ACB47C4A1E72EDA00059E114 /* String+Extension.swift in Sources */,
 				464EE8B71E72EC7600044C70 /* LeftChatCell.swift in Sources */,
