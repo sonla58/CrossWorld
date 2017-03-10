@@ -45,7 +45,6 @@ class LoginViewController: AppViewController, FBSDKLoginButtonDelegate {
         self.typeNavigationBar = .hidden
     }
     @IBAction func btnLoginFacebookClick(_ sender: Any) {
-        
         if (FBSDKAccessToken.current()) != nil {
             loginWithFacebook()
         }else{
@@ -79,14 +78,47 @@ class LoginViewController: AppViewController, FBSDKLoginButtonDelegate {
     
     func loginWithFacebook(){
         if let token = FBSDKAccessToken.current().tokenString{
+            if AppDefine.AppInfo.developMode {
+                self.performSegue(withIdentifier: AppDefine.Segue.loginToHome, sender: nil)
+                return
+            }
+            self.startAnimating()
             viewModel.loginReques(tokenFB: token, phone: nil, pass: nil, complite: { (isSuccess) in
+                self.stopAnimating()
                 if isSuccess{
-                    //GO home
+                    self.performSegue(withIdentifier: AppDefine.Segue.loginToHome, sender: nil)
                 }else{
-                    //retry
+                    
                 }
+            }, handleNotRegister: {
+                self.fetchProfile()
+                //TODO: goto register
             })
         }
+    }
+    
+    func fetchProfile(){
+        self.startAnimating()
+        let graphRequest:FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, name, birthday, picture.type(large)"])
+        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
+            self.stopAnimating()
+            if ((error) != nil)
+            {
+                // Process error
+                print("Error: \(error)")
+            }else{
+                if let data = result as? NSDictionary{
+                    print(data.allKeys)
+                    if let name = data.value(forKey: "name") as? String  {
+                        User.current.fullName = name
+                    }
+                    if let id = data.value(forKey: "id") as? String  {
+                        User.current.facebookId = id
+                    }
+                    self.performSegue(withIdentifier: AppDefine.Segue.loginToRegister, sender: nil)
+                }
+            }
+        })
     }
 
 }

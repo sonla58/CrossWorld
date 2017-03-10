@@ -10,16 +10,21 @@ import Foundation
 
 class LoginViewModel{
     
-    func loginReques(tokenFB: String?, phone: String?, pass: String?, complite: @escaping (_ isComplite: Bool)->()){
+    func loginReques(tokenFB: String?, phone: String?, pass: String?, complite: @escaping (_ isComplite: Bool)->(), handleNotRegister: @escaping ()->()){
        
         APIRequest().loginFacebook(facebook_token: tokenFB, phone_number: phone, password: pass, handle: { (isSuccees, user) in
             if isSuccees{
-                complite(true)
+                if let user = user{
+                    User.current = user
+                    complite(true)
+                }else{
+                    complite(false)
+                }
             }else{
                 complite(false)
             }
         }) { 
-            
+            handleNotRegister()
         }
     }
 }

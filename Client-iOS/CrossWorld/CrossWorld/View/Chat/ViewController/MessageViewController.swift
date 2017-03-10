@@ -9,11 +9,10 @@
 import UIKit
 import ImagePicker
 
-class MessageViewController: UIViewController , UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, ImagePickerDelegate {
+class MessageViewController: AppViewController , UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, ImagePickerDelegate {
     // MARK: - Outlet
     @IBOutlet weak var constrainTextViewHeight: NSLayoutConstraint!
     @IBOutlet weak var constrainTableViewBottom: NSLayoutConstraint!
-    @IBOutlet weak var lbUserName: UILabel!
     @IBOutlet weak var constraintViewBottom: NSLayoutConstraint!
     @IBOutlet weak var tbMessage: UITableView!
     @IBOutlet weak var btnSend: UIButton!
@@ -34,7 +33,6 @@ class MessageViewController: UIViewController , UITableViewDataSource, UITableVi
     
     // MARK: - Setup
     func setup(){
-        self.lbUserName.text = "some one"
         tvMessage.delegate = self
         imagePickerController.delegate = self
         
@@ -49,11 +47,17 @@ class MessageViewController: UIViewController , UITableViewDataSource, UITableVi
 
         initTableMessage()
         setup()
-        
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
+    
+    override func setupViewController() {
+        typeNavigationBar = .normal
+        leftButtonType = .back
+        rightButtonType = .notification
+        self.title = AppDefine.Screen.chat
+    }
+    
+    override func leftNaviButtonTapped() {
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     func initTableMessage(){
@@ -81,7 +85,6 @@ class MessageViewController: UIViewController , UITableViewDataSource, UITableVi
         //        ref.child("messenger").child(self.pathMessage!).childByAutoId().setValue(param)
         //        updateLastMessenger(content)
     }
-    
     
     //MARK: - Keyboard
     func keyboardWillShown(_ notification: Notification) {
@@ -112,9 +115,6 @@ class MessageViewController: UIViewController , UITableViewDataSource, UITableVi
         //        self.tvMessage.resignFirstResponder()
     }
     
-    @IBAction func btnBackClick(_ sender: AnyObject) {
-        _ = self.navigationController?.popViewController(animated: true)
-    }
     @IBAction func btnSendClick(_ sender: AnyObject) {
         
         let mess = Messenger(content: self.tvMessage.text)

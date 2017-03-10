@@ -29,6 +29,8 @@ class RegisterDetailViewController: AppViewController {
     
     // MARK: - Declare
     
+    var countryCode: String?
+    
     // MARK: - Define
     
     // MARK: - Setup
@@ -79,11 +81,27 @@ class RegisterDetailViewController: AppViewController {
     
     // MARK: - Action
     func btnNextTap() {
-//        self.performSegue(withIdentifier: AppDefine.Segue.registerToDetail, sender: nil)
+        self.performSegue(withIdentifier: AppDefine.Segue.registerDetailToLanguage, sender: nil)
     }
     
     func showCountryPicker() {
-        
+        let picker = CountryPickerViewController.initWithCode(code: countryCode ?? "")
+        picker.pickerClosure = { [weak self] (code: String, flag: UIImage, country: String, name: String) in
+            self?.txtCountry.text = name
+            self?.txtCountry.animateViewsForTextEntry()
+            self?.txtCountry.animateViewsForTextDisplay()
+        }
+        picker.code = countryCode ?? "VN"
+//        if !self.viewModel.countryCode.isBlank {
+//            picker.phoneCode = self.viewModel.countryCode
+//        }
+        picker.popup = PopupController.create(self.navigationController ?? self).customize([
+            PopupCustomOption.animation(PopupController.PopupAnimation.slideUp),
+            PopupCustomOption.backgroundStyle(PopupController.PopupBackgroundStyle.blackFilter(alpha: 0.5)),
+            PopupCustomOption.dismissWhenTaps(true),
+            PopupCustomOption.movesAlongWithKeyboard(true),
+            PopupCustomOption.layout(PopupController.PopupLayout.bottom)
+            ]).show(picker)
     }
     
     func showDatePicker() {

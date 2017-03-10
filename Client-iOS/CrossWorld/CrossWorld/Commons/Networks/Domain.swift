@@ -9,13 +9,13 @@
 import Foundation
 
 class Domain{
-    static let IP = "http://192.168.1.110/api"
+    static let IP = "http://172.20.10.7:3000/api"
     
     static let DOAMIN_SOCKET = IP + ":3000"
     static let DOAMIN_API = IP + ":8443"
     static let DOMAIN_HTTP_SOCKET = "http://" + DOAMIN_SOCKET
     static let DOMAIN_HTTPS = "https://" + DOAMIN_API
-    static let DOMAIN_URL = DOMAIN_HTTPS +  "/api"
+    static let DOMAIN_URL = IP
     
     static let URL_LOGIN = DOMAIN_URL + "/login"
     
