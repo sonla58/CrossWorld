@@ -30,6 +30,13 @@ class LoginViewController: AppViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         creatFBLoginButton()
+        
+        if (FBSDKAccessToken.current()) != nil {
+            print(FBSDKAccessToken.current().tokenString)
+        }else{
+            self.btnLoginFBButton.sendActions(for: UIControlEvents.touchUpInside)
+        }
+
         // Do any additional setup after loading the view.
     }
     
@@ -65,6 +72,9 @@ class LoginViewController: AppViewController, FBSDKLoginButtonDelegate {
     
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        
+        print(FBSDKAccessToken.current().tokenString)
+
         
     }
 }
