@@ -49,14 +49,14 @@ exports.findAll = function (callback) {
             callback(null, null);
         }
     }).catch(function (err) {
-        if (err) callback(err, null);
+        callback(err, null);
     })
 };
 
 exports.findById = function (id, callback) {
     Chat.findOne({
         where: {
-            customer_id: id
+            chat_id: id
         }
     }).then(function (row) {
         if (row) {
@@ -71,46 +71,16 @@ exports.findById = function (id, callback) {
 
 exports.update = function (data, callback) {
     Chat.findOne({
-        where: {customer_id: data.customer_id}
+        where: {chat_id: data.chat_id}
     }).then(function (row) {
         if (row) {
             row.update(data).then(function (r) {
-                if (r) {
-                    callback(null, r);
-                }
-            }).catch(function (err) {
-                if (err) callback(err, null);
-            })
+                callback(null, r);
+            }
         } else {
             callback(null, null);
         }
     }).catch(function (err) {
-        if (err) callback(err, null);
-    })
-};
-
-exports.updateOrCreate = function (data, callback) {
-    Chat.findOne({
-        where: {phone_number: data.phone_number}
-    }).then(function (row) {
-        if (row) {
-            console.log("update");
-            row.update(data).then(function (row) {
-
-            }).error(function (error) {
-                console.log(error);
-            })
-        } else {
-            console.log("save");
-            var itemAttach = Chat.build(data);
-            itemAttach.save().then(function (row) {
-
-            }).error(function (error) {
-                console.log(error);
-            })
-        }    
-
-    }).catch(function (error) {
-        console.log(error);
+        callback(err, null);
     })
 };

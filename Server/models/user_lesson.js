@@ -48,14 +48,14 @@ exports.findAll = function (callback) {
             callback(null, null);
         }
     }).catch(function (err) {
-        if (err) callback(err, null);
+        callback(err, null);
     })
 };
 
-exports.findById = function (id, callback) {
+exports.findByUserId = function (id, callback) {
     UserLesson.findOne({
         where: {
-            customer_id: id
+            user_id: id
         }
     }).then(function (row) {
         if (row) {
@@ -68,22 +68,18 @@ exports.findById = function (id, callback) {
     })
 };
 
-exports.update = function (data, callback) {
+exports.findByLessonId = function (id, callback) {
     UserLesson.findOne({
-        where: {customer_id: data.customer_id}
+        where: {
+            lesson_id: id
+        }
     }).then(function (row) {
         if (row) {
-            row.update(data).then(function (r) {
-                if (r) {
-                    callback(null, r);
-                }
-            }).catch(function (err) {
-                if (err) callback(err, null);
-            })
+            callback(null, row);
         } else {
             callback(null, null);
         }
     }).catch(function (err) {
-        if (err) callback(err, null);
+        callback(err, null);
     })
 };

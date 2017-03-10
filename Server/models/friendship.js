@@ -49,14 +49,14 @@ exports.findAll = function (callback) {
             callback(null, null);
         }
     }).catch(function (err) {
-        if (err) callback(err, null);
+        callback(err, null);
     })
 };
 
 exports.findById = function (id, callback) {
-    Friendship.findOne({
+    Friendship.findAll({
         where: {
-            customer_id: id
+            user_id_1: id
         }
     }).then(function (row) {
         if (row) {
@@ -66,25 +66,5 @@ exports.findById = function (id, callback) {
         }
     }).catch(function (err) {
         callback(err, null);
-    })
-};
-
-exports.update = function (data, callback) {
-    Friendship.findOne({
-        where: {customer_id: data.customer_id}
-    }).then(function (row) {
-        if (row) {
-            row.update(data).then(function (r) {
-                if (r) {
-                    callback(null, r);
-                }
-            }).catch(function (err) {
-                if (err) callback(err, null);
-            })
-        } else {
-            callback(null, null);
-        }
-    }).catch(function (err) {
-        if (err) callback(err, null);
     })
 };
