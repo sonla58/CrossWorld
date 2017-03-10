@@ -41,6 +41,9 @@
 		ACB47C6C1E7325A60059E114 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C6B1E7325A60059E114 /* HomeViewController.swift */; };
 		ACB47C6E1E7325B60059E114 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C6D1E7325B60059E114 /* FriendViewController.swift */; };
 		ACB47C701E7325C70059E114 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C6F1E7325C70059E114 /* GroupViewController.swift */; };
+		ACB47C721E732CFF0059E114 /* HomeActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C711E732CFF0059E114 /* HomeActivityTableViewCell.swift */; };
+		ACB47C761E732DF10059E114 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C751E732DF10059E114 /* HomeViewModel.swift */; };
+		ACB47C781E7333460059E114 /* HomeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C771E7333460059E114 /* HomeDetailTableViewCell.swift */; };
 		ACEFC8EF1E72C78900C39086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC8E31E72C78900C39086 /* AppDelegate.swift */; };
 		ACEFC8F11E72C78900C39086 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC8E61E72C78900C39086 /* LaunchScreen.storyboard */; };
 		ACEFC8F21E72C78900C39086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC8E81E72C78900C39086 /* Main.storyboard */; };
@@ -86,6 +89,9 @@
 		ACB47C6B1E7325A60059E114 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ACB47C6D1E7325B60059E114 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		ACB47C6F1E7325C70059E114 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		ACB47C711E732CFF0059E114 /* HomeActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeActivityTableViewCell.swift; sourceTree = "<group>"; };
+		ACB47C751E732DF10059E114 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		ACB47C771E7333460059E114 /* HomeDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		ACEFC8CD1E72C62A00C39086 /* CrossWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrossWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEFC8E21E72C78900C39086 /* CrossWorld-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CrossWorld-Bridging-Header.h"; path = "../CrossWorld-Bridging-Header.h"; sourceTree = "<group>"; };
 		ACEFC8E31E72C78900C39086 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
@@ -330,6 +336,8 @@
 		ACB47C651E73252E0059E114 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				ACB47C711E732CFF0059E114 /* HomeActivityTableViewCell.swift */,
+				ACB47C771E7333460059E114 /* HomeDetailTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -345,6 +353,7 @@
 		ACB47C671E73252E0059E114 /* VỉewModel */ = {
 			isa = PBXGroup;
 			children = (
+				ACB47C751E732DF10059E114 /* HomeViewModel.swift */,
 			);
 			path = "VỉewModel";
 			sourceTree = "<group>";
@@ -638,8 +647,11 @@
 				ACB47C6E1E7325B60059E114 /* FriendViewController.swift in Sources */,
 				464EE8B91E72EC7600044C70 /* MessageViewController.swift in Sources */,
 				4688280C1E730986005514DF /* SocketRequest.swift in Sources */,
+				ACB47C781E7333460059E114 /* HomeDetailTableViewCell.swift in Sources */,
 				ACEFC8FF1E72C9DD00C39086 /* AppViewController.swift in Sources */,
+				ACB47C761E732DF10059E114 /* HomeViewModel.swift in Sources */,
 				4688280A1E730986005514DF /* Domain.swift in Sources */,
+				ACB47C721E732CFF0059E114 /* HomeActivityTableViewCell.swift in Sources */,
 				ACB47C3F1E72D2D10059E114 /* ASTextField.swift in Sources */,
 				468827F81E7308DA005514DF /* ConversationTableViewCell.swift in Sources */,
 				ACB47C471E72EBD00059E114 /* AppAccess.swift in Sources */,
