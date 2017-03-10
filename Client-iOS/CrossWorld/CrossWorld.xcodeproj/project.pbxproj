@@ -42,10 +42,12 @@
 		ACB47C631E7319900059E114 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C621E7319900059E114 /* LanguageViewModel.swift */; };
 		ACB47C6C1E7325A60059E114 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C6B1E7325A60059E114 /* HomeViewController.swift */; };
 		ACB47C6E1E7325B60059E114 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C6D1E7325B60059E114 /* FriendViewController.swift */; };
-		ACB47C701E7325C70059E114 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C6F1E7325C70059E114 /* GroupViewController.swift */; };
 		ACB47C721E732CFF0059E114 /* HomeActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C711E732CFF0059E114 /* HomeActivityTableViewCell.swift */; };
 		ACB47C761E732DF10059E114 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C751E732DF10059E114 /* HomeViewModel.swift */; };
 		ACB47C781E7333460059E114 /* HomeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C771E7333460059E114 /* HomeDetailTableViewCell.swift */; };
+		ACB47C7A1E7347300059E114 /* SpotyPeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C791E7347300059E114 /* SpotyPeopleTableViewCell.swift */; };
+		ACB47C7C1E7347B90059E114 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C7B1E7347B90059E114 /* PeopleTableViewCell.swift */; };
+		ACB47C7E1E7349290059E114 /* FriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C7D1E7349290059E114 /* FriendViewModel.swift */; };
 		ACEFC8EF1E72C78900C39086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC8E31E72C78900C39086 /* AppDelegate.swift */; };
 		ACEFC8F11E72C78900C39086 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC8E61E72C78900C39086 /* LaunchScreen.storyboard */; };
 		ACEFC8F21E72C78900C39086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC8E81E72C78900C39086 /* Main.storyboard */; };
@@ -92,10 +94,12 @@
 		ACB47C621E7319900059E114 /* LanguageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
 		ACB47C6B1E7325A60059E114 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ACB47C6D1E7325B60059E114 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
-		ACB47C6F1E7325C70059E114 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		ACB47C711E732CFF0059E114 /* HomeActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeActivityTableViewCell.swift; sourceTree = "<group>"; };
 		ACB47C751E732DF10059E114 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		ACB47C771E7333460059E114 /* HomeDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDetailTableViewCell.swift; sourceTree = "<group>"; };
+		ACB47C791E7347300059E114 /* SpotyPeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotyPeopleTableViewCell.swift; sourceTree = "<group>"; };
+		ACB47C7B1E7347B90059E114 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
+		ACB47C7D1E7349290059E114 /* FriendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewModel.swift; sourceTree = "<group>"; };
 		ACEFC8CD1E72C62A00C39086 /* CrossWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrossWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEFC8E21E72C78900C39086 /* CrossWorld-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CrossWorld-Bridging-Header.h"; path = "../CrossWorld-Bridging-Header.h"; sourceTree = "<group>"; };
 		ACEFC8E31E72C78900C39086 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
@@ -406,6 +410,7 @@
 			children = (
 				ACB47C691E7325590059E114 /* Cell */,
 				ACB47C6D1E7325B60059E114 /* FriendViewController.swift */,
+				ACB47C7D1E7349290059E114 /* FriendViewModel.swift */,
 			);
 			path = Friend;
 			sourceTree = "<group>";
@@ -413,6 +418,8 @@
 		ACB47C691E7325590059E114 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				ACB47C791E7347300059E114 /* SpotyPeopleTableViewCell.swift */,
+				ACB47C7B1E7347B90059E114 /* PeopleTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -685,6 +692,7 @@
 			files = (
 				468828161E733131005514DF /* GroupViewController.swift in Sources */,
 				4688280B1E730986005514DF /* SocketHandles.swift in Sources */,
+				ACB47C7E1E7349290059E114 /* FriendViewModel.swift in Sources */,
 				468828081E730986005514DF /* APIHandles.swift in Sources */,
 				ACB47C631E7319900059E114 /* LanguageViewModel.swift in Sources */,
 				468827FE1E7308FF005514DF /* LoginViewController.swift in Sources */,
@@ -703,6 +711,7 @@
 				ACB47C4A1E72EDA00059E114 /* String+Extension.swift in Sources */,
 				464EE8B71E72EC7600044C70 /* LeftChatCell.swift in Sources */,
 				464EE8B81E72EC7600044C70 /* RightChatCell.swift in Sources */,
+				ACB47C7C1E7347B90059E114 /* PeopleTableViewCell.swift in Sources */,
 				ACEFC8FD1E72C99500C39086 /* AppDefine.swift in Sources */,
 				ACB47C4F1E72F0CA0059E114 /* AppError.swift in Sources */,
 				AC4335BD1E72D19E00EFBF96 /* LoginDetailViewController.swift in Sources */,
@@ -715,6 +724,7 @@
 				ACB47C451E72DC380059E114 /* RegisterDetailViewController.swift in Sources */,
 				468828181E733143005514DF /* GroupTableViewCell.swift in Sources */,
 				ACB47C4D1E72EEC80059E114 /* BannerManager.swift in Sources */,
+				ACB47C7A1E7347300059E114 /* SpotyPeopleTableViewCell.swift in Sources */,
 				468828111E7319B2005514DF /* RegisterViewController.swift in Sources */,
 				ACEFC8F71E72C7C400C39086 /* Utils.swift in Sources */,
 				4688280D1E730986005514DF /* TDUtils.swift in Sources */,

@@ -39,7 +39,8 @@ class HomeViewController: AppViewController {
         self.typeNavigationBar = .normal
         self.rightButtonType = .notification
         self.leftButtonType = .user("")
-        self.title = "CrossWorld"
+        self.title = "Nhà"
+        self.navigationItem.title = "CrossWorld"
     }
 
 }

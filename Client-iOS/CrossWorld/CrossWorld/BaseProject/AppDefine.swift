@@ -47,6 +47,11 @@ class AppDefine {
         //Home
         static var idCellHomeActivity = "idCellHomeActivity"
         static var idCellHomeDetail = "idCellHomeDetail"
+        
+        // Friend
+        static var idCellSpotyPeople = "idCellSpotyPeople"
+        static var idCellActionFriend = "idCellActionFriend"
+        static var idCellPeople = "idCellPeople"
     }
     
 }
