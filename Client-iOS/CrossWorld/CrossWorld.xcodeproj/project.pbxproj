@@ -26,6 +26,11 @@
 		468828111E7319B2005514DF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4688280F1E7319B2005514DF /* RegisterViewController.swift */; };
 		468828161E733131005514DF /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468828151E733131005514DF /* GroupViewController.swift */; };
 		468828181E733143005514DF /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468828171E733143005514DF /* GroupTableViewCell.swift */; };
+		46D6D3171E733D6F002A9018 /* AvatarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D6D3131E733D6F002A9018 /* AvatarTableViewCell.swift */; };
+		46D6D3181E733D6F002A9018 /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D6D3141E733D6F002A9018 /* LogoutTableViewCell.swift */; };
+		46D6D31A1E733D9D002A9018 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D6D3191E733D9D002A9018 /* UserViewController.swift */; };
+		46D6D31C1E733DC4002A9018 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D6D31B1E733DC4002A9018 /* UserViewModel.swift */; };
+		46D6D3201E7347CD002A9018 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D6D31F1E7347CD002A9018 /* NotificationViewController.swift */; };
 		AC4335BD1E72D19E00EFBF96 /* LoginDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4335BC1E72D19E00EFBF96 /* LoginDetailViewController.swift */; };
 		ACB47C3F1E72D2D10059E114 /* ASTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C3E1E72D2D10059E114 /* ASTextField.swift */; };
 		ACB47C451E72DC380059E114 /* RegisterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C441E72DC380059E114 /* RegisterDetailViewController.swift */; };
@@ -42,7 +47,6 @@
 		ACB47C631E7319900059E114 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C621E7319900059E114 /* LanguageViewModel.swift */; };
 		ACB47C6C1E7325A60059E114 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C6B1E7325A60059E114 /* HomeViewController.swift */; };
 		ACB47C6E1E7325B60059E114 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C6D1E7325B60059E114 /* FriendViewController.swift */; };
-		ACB47C701E7325C70059E114 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C6F1E7325C70059E114 /* GroupViewController.swift */; };
 		ACB47C721E732CFF0059E114 /* HomeActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C711E732CFF0059E114 /* HomeActivityTableViewCell.swift */; };
 		ACB47C761E732DF10059E114 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C751E732DF10059E114 /* HomeViewModel.swift */; };
 		ACB47C781E7333460059E114 /* HomeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C771E7333460059E114 /* HomeDetailTableViewCell.swift */; };
@@ -76,6 +80,11 @@
 		4688280F1E7319B2005514DF /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		468828151E733131005514DF /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		468828171E733143005514DF /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		46D6D3131E733D6F002A9018 /* AvatarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarTableViewCell.swift; sourceTree = "<group>"; };
+		46D6D3141E733D6F002A9018 /* LogoutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutTableViewCell.swift; sourceTree = "<group>"; };
+		46D6D3191E733D9D002A9018 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		46D6D31B1E733DC4002A9018 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		46D6D31F1E7347CD002A9018 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		AC4335BC1E72D19E00EFBF96 /* LoginDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDetailViewController.swift; sourceTree = "<group>"; };
 		ACB47C3E1E72D2D10059E114 /* ASTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTextField.swift; sourceTree = "<group>"; };
 		ACB47C441E72DC380059E114 /* RegisterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDetailViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +101,6 @@
 		ACB47C621E7319900059E114 /* LanguageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
 		ACB47C6B1E7325A60059E114 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ACB47C6D1E7325B60059E114 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
-		ACB47C6F1E7325C70059E114 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		ACB47C711E732CFF0059E114 /* HomeActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeActivityTableViewCell.swift; sourceTree = "<group>"; };
 		ACB47C751E732DF10059E114 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		ACB47C771E7333460059E114 /* HomeDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -260,6 +268,57 @@
 			isa = PBXGroup;
 			children = (
 				468828151E733131005514DF /* GroupViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		46D6D3111E733D6F002A9018 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				46D6D3121E733D6F002A9018 /* Custom */,
+				46D6D3151E733D6F002A9018 /* ViewController */,
+				46D6D3161E733D6F002A9018 /* ViewModel */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		46D6D3121E733D6F002A9018 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				46D6D3131E733D6F002A9018 /* AvatarTableViewCell.swift */,
+				46D6D3141E733D6F002A9018 /* LogoutTableViewCell.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		46D6D3151E733D6F002A9018 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				46D6D3191E733D9D002A9018 /* UserViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		46D6D3161E733D6F002A9018 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				46D6D31B1E733DC4002A9018 /* UserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		46D6D31D1E7347C0002A9018 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				46D6D31E1E7347C0002A9018 /* ViewController */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		46D6D31E1E7347C0002A9018 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				46D6D31F1E7347CD002A9018 /* NotificationViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -504,6 +563,8 @@
 		ACEFC8EE1E72C78900C39086 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				46D6D31D1E7347C0002A9018 /* Notification */,
+				46D6D3111E733D6F002A9018 /* User */,
 				ACB47C6A1E7325880059E114 /* Group */,
 				ACB47C641E73252E0059E114 /* Home */,
 				ACB47C681E7325590059E114 /* Friend */,
@@ -688,11 +749,14 @@
 				468828081E730986005514DF /* APIHandles.swift in Sources */,
 				ACB47C631E7319900059E114 /* LanguageViewModel.swift in Sources */,
 				468827FE1E7308FF005514DF /* LoginViewController.swift in Sources */,
+				46D6D31C1E733DC4002A9018 /* UserViewModel.swift in Sources */,
 				468827FF1E7308FF005514DF /* LoginViewModel.swift in Sources */,
 				ACB47C6E1E7325B60059E114 /* FriendViewController.swift in Sources */,
+				46D6D31A1E733D9D002A9018 /* UserViewController.swift in Sources */,
 				464EE8B91E72EC7600044C70 /* MessageViewController.swift in Sources */,
 				4688280C1E730986005514DF /* SocketRequest.swift in Sources */,
 				ACB47C781E7333460059E114 /* HomeDetailTableViewCell.swift in Sources */,
+				46D6D3181E733D6F002A9018 /* LogoutTableViewCell.swift in Sources */,
 				ACEFC8FF1E72C9DD00C39086 /* AppViewController.swift in Sources */,
 				ACB47C761E732DF10059E114 /* HomeViewModel.swift in Sources */,
 				4688280A1E730986005514DF /* Domain.swift in Sources */,
@@ -714,6 +778,7 @@
 				ACB47C521E72F9490059E114 /* DatePickerViewController.swift in Sources */,
 				ACB47C451E72DC380059E114 /* RegisterDetailViewController.swift in Sources */,
 				468828181E733143005514DF /* GroupTableViewCell.swift in Sources */,
+				46D6D3201E7347CD002A9018 /* NotificationViewController.swift in Sources */,
 				ACB47C4D1E72EEC80059E114 /* BannerManager.swift in Sources */,
 				468828111E7319B2005514DF /* RegisterViewController.swift in Sources */,
 				ACEFC8F71E72C7C400C39086 /* Utils.swift in Sources */,
@@ -721,6 +786,7 @@
 				ACB47C6C1E7325A60059E114 /* HomeViewController.swift in Sources */,
 				468828091E730986005514DF /* APIRequest.swift in Sources */,
 				ACB47C581E730AB30059E114 /* CountryPickerViewController.swift in Sources */,
+				46D6D3171E733D6F002A9018 /* AvatarTableViewCell.swift in Sources */,
 				464EE8BD1E72ECE000044C70 /* Messenger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
