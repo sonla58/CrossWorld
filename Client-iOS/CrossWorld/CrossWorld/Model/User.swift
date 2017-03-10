@@ -13,7 +13,9 @@ class User: EVObject {
     
     static var current = User()
     
+    var avatar: String?
     var phoneNumber: String?
+    var email: String?
     var password: String?
     var userName: String?
     var fullName: String?
