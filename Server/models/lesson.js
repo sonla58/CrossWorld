@@ -33,7 +33,7 @@ module.exports.connect = function (callback) {
         timestamps: false,
         createAt: false,
         updateAt: false,
-        tableName: 'user'
+        tableName: 'lesson'
     });
 };
 
@@ -50,20 +50,6 @@ exports.create = function (data, callback) {
     })
 };
 
-exports.findByPhone = function (phone, callback) {
-    Lesson.findOne({
-        where: {phone_number: phone}
-    }).then(function (row) {
-        if (row) {
-            callback(null, row);
-        } else {
-            callback(null, null);
-        }
-    }).catch(function (err) {
-        if (err) callback(err, null);
-    })
-};
-
 exports.findAll = function (callback) {
     Lesson.findAll({
         where: {}
@@ -74,14 +60,14 @@ exports.findAll = function (callback) {
             callback(null, null);
         }
     }).catch(function (err) {
-        if (err) callback(err, null);
+        callback(err, null);
     })
 };
 
 exports.findById = function (id, callback) {
     Lesson.findOne({
         where: {
-            customer_id: id
+            lesson_id: id
         }
     }).then(function (row) {
         if (row) {
@@ -96,20 +82,16 @@ exports.findById = function (id, callback) {
 
 exports.update = function (data, callback) {
     Lesson.findOne({
-        where: {customer_id: data.customer_id}
+        where: {lesson_id: data.lesson_id}
     }).then(function (row) {
         if (row) {
             row.update(data).then(function (r) {
-                if (r) {
-                    callback(null, r);
-                }
-            }).catch(function (err) {
-                if (err) callback(err, null);
-            })
+                callback(null, r);
+            }
         } else {
             callback(null, null);
         }
     }).catch(function (err) {
-        if (err) callback(err, null);
+        callback(err, null);
     })
 };

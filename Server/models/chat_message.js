@@ -21,13 +21,13 @@ module.exports.connect = function (callback) {
             type: Sequelize.STRING,
         },
         image: {
-        	type: Sequelize.STRING,
+            type: Sequelize.STRING,
         },
         delected: {
-        	type: Sequelize.BOOLEAN
+            type: Sequelize.BOOLEAN
         },
         create_at: {
-        	type: Sequelize.DATE
+            type: Sequelize.DATE
         }
     }, {
         timestamps: false,
@@ -50,20 +50,6 @@ exports.create = function (data, callback) {
     })
 };
 
-exports.findByPhone = function (phone, callback) {
-    ChatMessage.findOne({
-        where: {phone_number: phone}
-    }).then(function (row) {
-        if (row) {
-            callback(null, row);
-        } else {
-            callback(null, null);
-        }
-    }).catch(function (err) {
-        if (err) callback(err, null);
-    })
-};
-
 exports.findAll = function (callback) {
     ChatMessage.findAll({
         where: {}
@@ -81,7 +67,7 @@ exports.findAll = function (callback) {
 exports.findById = function (id, callback) {
     Customer.findOne({
         where: {
-            customer_id: id
+            chat_message_id: id
         }
     }).then(function (row) {
         if (row) {
@@ -94,67 +80,34 @@ exports.findById = function (id, callback) {
     })
 };
 
-exports.findByEmail = function (e, callback) {
-    if(e == '' || e == null) {
-        callback(null, null);
-    } else {
-        Customer.findOne({
+exports.findByUserId = function (id, callback) {
+    Customer.findOne({
         where: {
-            email: e}
-        }).then(function (row) {
-            if (row) {
-                callback(null, row);
-            } else {
-                callback(null, null);
-            }
-        }).catch(function (err) {
-            if (err) callback(err, null);
-        })
-    }
-};
-
-exports.update = function (data, callback) {
-    ChatMessage.findOne({
-        where: {customer_id: data.customer_id}
+            user_id: id
+        }
     }).then(function (row) {
         if (row) {
-            row.update(data).then(function (r) {
-                if (r) {
-                    callback(null, r);
-                }
-            }).catch(function (err) {
-                if (err) callback(err, null);
-            })
+            callback(null, row);
         } else {
             callback(null, null);
         }
     }).catch(function (err) {
-        if (err) callback(err, null);
+        callback(err, null);
     })
 };
 
-exports.updateOrCreate = function (data, callback) {
+exports.update = function (data, callback) {
     ChatMessage.findOne({
-        where: {phone_number: data.phone_number}
+        where: {chat_message_id: data.chat_message_id}
     }).then(function (row) {
         if (row) {
-            console.log("update");
-            row.update(data).then(function (row) {
-
-            }).error(function (error) {
-                console.log(error);
-            })
+            row.update(data).then(function (r) {
+                callback(null, r);
+            }
         } else {
-            console.log("save");
-            var itemAttach = ChatMessage.build(data);
-            itemAttach.save().then(function (row) {
-
-            }).error(function (error) {
-                console.log(error);
-            })
-        }    
-
-    }).catch(function (error) {
-        console.log(error);
+            callback(null, null);
+        }
+    }).catch(function (err) {
+        callback(err, null);
     })
 };

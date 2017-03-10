@@ -44,14 +44,14 @@ exports.findAll = function (callback) {
             callback(null, null);
         }
     }).catch(function (err) {
-        if (err) callback(err, null);
+        callback(err, null);
     })
 };
 
 exports.findById = function (id, callback) {
     Language.findOne({
         where: {
-            customer_id: id
+            language_id: id
         }
     }).then(function (row) {
         if (row) {
@@ -66,20 +66,16 @@ exports.findById = function (id, callback) {
 
 exports.update = function (data, callback) {
     Language.findOne({
-        where: {customer_id: data.customer_id}
+        where: {language_id: data.language_id}
     }).then(function (row) {
         if (row) {
             row.update(data).then(function (r) {
-                if (r) {
-                    callback(null, r);
-                }
-            }).catch(function (err) {
-                if (err) callback(err, null);
-            })
+                callback(null, r);
+            }
         } else {
             callback(null, null);
         }
     }).catch(function (err) {
-        if (err) callback(err, null);
+        callback(err, null);
     })
 };
