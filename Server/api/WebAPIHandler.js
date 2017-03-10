@@ -10,6 +10,7 @@ var WebAPIHandler = {
         app.use(bodyParser.urlencoded({ extended: true }));
         app.use(bodyParser.json());
 
+        router.use("/check-account", require('./CheckAccount'));
         router.use("/register", require('./Register'));
         router.use("/login", require('./Login'));
         // router.use("/logout", require('./Logout'));

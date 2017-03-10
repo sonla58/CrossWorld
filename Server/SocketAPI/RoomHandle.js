@@ -1,11 +1,9 @@
-var RoomHandle = function () {
-
-};
+var RoomHandle = function () {};
 
 RoomHandle.prototype.attach = function (io, socket) {
     var self = this;
 
-    socket.on('all-room', function (data) {
+    socket.on('get-all-room', function (data) {
 
     })
 
