@@ -22,4 +22,8 @@ class User: EVObject {
     var countryId: String?
     var facebookId: String?
     var languageId: NSNumber?
+    var birthday: String?
+    
+    var user_id: String?
+    var token: String?
 }

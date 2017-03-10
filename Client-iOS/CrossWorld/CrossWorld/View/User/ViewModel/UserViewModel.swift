@@ -60,9 +60,9 @@ class UserModel {
     var tbDataSource = [
         TDTBSession.init(headerHeight: 0, footerHeihgt: 0, cells: [
             CellUser.init(des: nil, title: nil, textLeft: nil, image: nil, isBottomInSession: false, isTopInSecction: false, height: 170),
-            CellUser.init(des: nil, title: "Name", textLeft: User.current.fullName, image: nil, isBottomInSession: false, isTopInSecction: false, height: 44),
-            CellUser.init(des: nil, title: "Phone", textLeft: User.current.phoneNumber, image: nil, isBottomInSession: false, isTopInSecction: false, height: 44),
-            CellUser.init(des: nil, title: "Email", textLeft: User.current.email, image: nil, isBottomInSession: true, isTopInSecction: false, height: 44)
+            CellUser.init(des: nil, title: "Name", textLeft: User.current.fullName ?? "Your name", image: nil, isBottomInSession: false, isTopInSecction: false, height: 44),
+            CellUser.init(des: nil, title: "Phone", textLeft: User.current.phoneNumber ?? "Your phone", image: nil, isBottomInSession: false, isTopInSecction: false, height: 44),
+            CellUser.init(des: nil, title: "Email", textLeft: User.current.email ?? "Your email", image: nil, isBottomInSession: true, isTopInSecction: false, height: 44)
             ]),
         TDTBSession.init(headerHeight: 28, footerHeihgt: 0, cells: [
             CellUser.init(des: "Setting your notification you will recieve", title: "Notification", textLeft: nil, image: nil, isBottomInSession: true, isTopInSecction: true, height: 50)

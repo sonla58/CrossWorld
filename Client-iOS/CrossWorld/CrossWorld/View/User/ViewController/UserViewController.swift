@@ -90,7 +90,7 @@ class UserViewController: AppViewController, UITableViewDelegate, UITableViewDat
         if indexPath.section == 0 || indexPath.section == 4 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "RightDetailTableViewCell", for: indexPath)
             cell.textLabel?.text = item.title
-            cell.detailTextLabel?.text = item.des
+            cell.detailTextLabel?.text = item.textLeft
             
             return cell
             
@@ -131,16 +131,11 @@ class UserViewController: AppViewController, UITableViewDelegate, UITableViewDat
             //            APIRequest().logout(handle: { (isSuccess, data) in
             //                //
             //            })
-            DispatchQueue.main.async {
-                if let vc = self.presentingViewController?.childViewControllers.first as? UINavigationController{
-                    
-                    self.dismiss(animated: true, completion: nil)
-                }
+            if let view = self.presentingViewController as? UITabBarController{
+                self.dismiss(animated: true, completion: nil)
+                view.dismiss(animated: true, completion: nil)
             }
-            
-            self.dismiss(animated: true, completion: {
-                
-            })
+         
             return
         }
         
