@@ -45,7 +45,6 @@ class LoginViewController: AppViewController, FBSDKLoginButtonDelegate {
         self.typeNavigationBar = .hidden
     }
     @IBAction func btnLoginFacebookClick(_ sender: Any) {
-        
         if (FBSDKAccessToken.current()) != nil {
             loginWithFacebook()
         }else{
@@ -79,11 +78,17 @@ class LoginViewController: AppViewController, FBSDKLoginButtonDelegate {
     
     func loginWithFacebook(){
         if let token = FBSDKAccessToken.current().tokenString{
+            if AppDefine.AppInfo.developMode {
+                self.performSegue(withIdentifier: AppDefine.Segue.loginToHome, sender: nil)
+                return
+            }
+            self.startAnimating()
             viewModel.loginReques(tokenFB: token, phone: nil, pass: nil, complite: { (isSuccess) in
+                self.stopAnimating()
                 if isSuccess{
-                    //GO home
+                    self.performSegue(withIdentifier: AppDefine.Segue.loginToHome, sender: nil)
                 }else{
-                    //retry
+                    
                 }
             }, handleNotRegister: {
                 self.fetchProfile()

@@ -1,58 +1,58 @@
 //
-//  ConversationViewController.swift
+//  GroupViewController.swift
 //  CrossWorld
 //
-//  Created by My Macbook Pro on 3/10/17.
+//  Created by Anh Son Le on 3/11/17.
 //  Copyright © 2017 Anh Son Le. All rights reserved.
 //
 
 import UIKit
 
-class ConversationViewController: AppViewController, UITableViewDelegate, UITableViewDataSource {
+class GroupViewController: AppViewController, UITableViewDelegate, UITableViewDataSource {
+
     // MARK: - Outlet
-    
-    @IBOutlet weak var segment: UISegmentedControl!
-    @IBOutlet weak var tbConverstation: UITableView!
-    
+    @IBOutlet weak var tbGroup: UITableView!
     
     // MARK: - Declare
     
-    
     // MARK: - Define
-    
     
     // MARK: - Setup
     
-    
     // MARK: - Lifecircle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-    override func setupViewController() {
-        super.setupViewController()
-        
-        leftButtonType = .user("")
-        rightButtonType = .notification
-        typeNavigationBar = .normal
-        self.title = AppDefine.Screen.converstation
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
-    override func setupAction() {
-        super.setupAction()
-        
-        _ = segment.reactive.controlEvents(.valueChanged).observeNext {
-            let index = self.segment.selectedSegmentIndex
-            print(index)
-        }
+    // MARK: - AppViewController
+    override func setupViewController() {
+        self.typeViewController = .root
+        self.typeNavigationBar = .normal
+        self.rightButtonType = .notification
+        self.leftButtonType = .user("")
+        self.title = "Nhóm"
     }
-
+    
     // MARK: - TableviewDelegate
     //
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 12
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 67
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -75,15 +75,7 @@ class ConversationViewController: AppViewController, UITableViewDelegate, UITabl
         
         return [deleteAction]
     }
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 67
-    }
+
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return nil
@@ -104,8 +96,11 @@ class ConversationViewController: AppViewController, UITableViewDelegate, UITabl
     // MARK: - TableViewDatasource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "ConversationTableViewCell", for: indexPath) as? ConversationTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "GroupTableViewCell", for: indexPath) as? GroupTableViewCell {
             cell.imgPhoto.image = #imageLiteral(resourceName: "TGUserInfo")
+            cell.imgAvatarTop.image = #imageLiteral(resourceName: "home_lesson")
+            cell.imgAvatarBottom.image = #imageLiteral(resourceName: "home_word")
+            
             return cell
         }
         return UITableViewCell()
@@ -118,7 +113,7 @@ class ConversationViewController: AppViewController, UITableViewDelegate, UITabl
     // MARK: - TableViewAction
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: AppDefine.Segue.conversationToChat, sender: nil)
+        //
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

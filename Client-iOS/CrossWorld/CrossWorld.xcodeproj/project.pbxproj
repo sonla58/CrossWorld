@@ -24,6 +24,8 @@
 		4688280C1E730986005514DF /* SocketRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468828061E730986005514DF /* SocketRequest.swift */; };
 		4688280D1E730986005514DF /* TDUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468828071E730986005514DF /* TDUtils.swift */; };
 		468828111E7319B2005514DF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4688280F1E7319B2005514DF /* RegisterViewController.swift */; };
+		468828161E733131005514DF /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468828151E733131005514DF /* GroupViewController.swift */; };
+		468828181E733143005514DF /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468828171E733143005514DF /* GroupTableViewCell.swift */; };
 		AC4335BD1E72D19E00EFBF96 /* LoginDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4335BC1E72D19E00EFBF96 /* LoginDetailViewController.swift */; };
 		ACB47C3F1E72D2D10059E114 /* ASTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C3E1E72D2D10059E114 /* ASTextField.swift */; };
 		ACB47C451E72DC380059E114 /* RegisterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C441E72DC380059E114 /* RegisterDetailViewController.swift */; };
@@ -40,7 +42,6 @@
 		ACB47C631E7319900059E114 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C621E7319900059E114 /* LanguageViewModel.swift */; };
 		ACB47C6C1E7325A60059E114 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C6B1E7325A60059E114 /* HomeViewController.swift */; };
 		ACB47C6E1E7325B60059E114 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C6D1E7325B60059E114 /* FriendViewController.swift */; };
-		ACB47C701E7325C70059E114 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C6F1E7325C70059E114 /* GroupViewController.swift */; };
 		ACEFC8EF1E72C78900C39086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC8E31E72C78900C39086 /* AppDelegate.swift */; };
 		ACEFC8F11E72C78900C39086 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC8E61E72C78900C39086 /* LaunchScreen.storyboard */; };
 		ACEFC8F21E72C78900C39086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC8E81E72C78900C39086 /* Main.storyboard */; };
@@ -69,6 +70,8 @@
 		468828061E730986005514DF /* SocketRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketRequest.swift; sourceTree = "<group>"; };
 		468828071E730986005514DF /* TDUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDUtils.swift; sourceTree = "<group>"; };
 		4688280F1E7319B2005514DF /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		468828151E733131005514DF /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		468828171E733143005514DF /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		AC4335BC1E72D19E00EFBF96 /* LoginDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDetailViewController.swift; sourceTree = "<group>"; };
 		ACB47C3E1E72D2D10059E114 /* ASTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTextField.swift; sourceTree = "<group>"; };
 		ACB47C441E72DC380059E114 /* RegisterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDetailViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +88,6 @@
 		ACB47C621E7319900059E114 /* LanguageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
 		ACB47C6B1E7325A60059E114 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ACB47C6D1E7325B60059E114 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
-		ACB47C6F1E7325C70059E114 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		ACEFC8CD1E72C62A00C39086 /* CrossWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrossWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEFC8E21E72C78900C39086 /* CrossWorld-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CrossWorld-Bridging-Header.h"; path = "../CrossWorld-Bridging-Header.h"; sourceTree = "<group>"; };
 		ACEFC8E31E72C78900C39086 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
@@ -229,6 +231,29 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		468828121E733131005514DF /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				468828171E733143005514DF /* GroupTableViewCell.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		468828131E733131005514DF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		468828141E733131005514DF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				468828151E733131005514DF /* GroupViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		AC4335BB1E72D18800EFBF96 /* LoginDetail */ = {
@@ -384,7 +409,9 @@
 		ACB47C6A1E7325880059E114 /* Group */ = {
 			isa = PBXGroup;
 			children = (
-				ACB47C6F1E7325C70059E114 /* GroupViewController.swift */,
+				468828121E733131005514DF /* Custom */,
+				468828131E733131005514DF /* ViewModel */,
+				468828141E733131005514DF /* ViewController */,
 			);
 			path = Group;
 			sourceTree = "<group>";
@@ -645,6 +672,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				468828161E733131005514DF /* GroupViewController.swift in Sources */,
 				4688280B1E730986005514DF /* SocketHandles.swift in Sources */,
 				468828081E730986005514DF /* APIHandles.swift in Sources */,
 				ACB47C631E7319900059E114 /* LanguageViewModel.swift in Sources */,
@@ -671,6 +699,7 @@
 				ACEFC8EF1E72C78900C39086 /* AppDelegate.swift in Sources */,
 				ACB47C521E72F9490059E114 /* DatePickerViewController.swift in Sources */,
 				ACB47C451E72DC380059E114 /* RegisterDetailViewController.swift in Sources */,
+				468828181E733143005514DF /* GroupTableViewCell.swift in Sources */,
 				ACB47C4D1E72EEC80059E114 /* BannerManager.swift in Sources */,
 				468828111E7319B2005514DF /* RegisterViewController.swift in Sources */,
 				ACEFC8F71E72C7C400C39086 /* Utils.swift in Sources */,
@@ -679,7 +708,6 @@
 				468828091E730986005514DF /* APIRequest.swift in Sources */,
 				ACB47C581E730AB30059E114 /* CountryPickerViewController.swift in Sources */,
 				464EE8BD1E72ECE000044C70 /* Messenger.swift in Sources */,
-				ACB47C701E7325C70059E114 /* GroupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
