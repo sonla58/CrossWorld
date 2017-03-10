@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2E2CD2C07DD80B3E57B74FC2 /* Pods_CrossWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F521D370B99DB0FB27A46F83 /* Pods_CrossWorld.framework */; };
+		464EE8B71E72EC7600044C70 /* LeftChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE8B21E72EC7600044C70 /* LeftChatCell.swift */; };
+		464EE8B81E72EC7600044C70 /* RightChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE8B31E72EC7600044C70 /* RightChatCell.swift */; };
+		464EE8B91E72EC7600044C70 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE8B51E72EC7600044C70 /* MessageViewController.swift */; };
+		464EE8BB1E72EC8300044C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 464EE8BA1E72EC8300044C70 /* Assets.xcassets */; };
+		464EE8BD1E72ECE000044C70 /* Messenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE8BC1E72ECE000044C70 /* Messenger.swift */; };
 		AC4335BD1E72D19E00EFBF96 /* LoginDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4335BC1E72D19E00EFBF96 /* LoginDetailViewController.swift */; };
 		ACB47C3F1E72D2D10059E114 /* ASTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C3E1E72D2D10059E114 /* ASTextField.swift */; };
 		ACB47C421E72D8AF0059E114 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C411E72D8AF0059E114 /* RegisterViewController.swift */; };
@@ -19,7 +24,6 @@
 		ACB47C521E72F9490059E114 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C511E72F9490059E114 /* DatePickerViewController.swift */; };
 		ACB47C541E72F9690059E114 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB47C531E72F9690059E114 /* DatePickerViewController.xib */; };
 		ACEFC8EF1E72C78900C39086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC8E31E72C78900C39086 /* AppDelegate.swift */; };
-		ACEFC8F01E72C78900C39086 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC8E41E72C78900C39086 /* Assets.xcassets */; };
 		ACEFC8F11E72C78900C39086 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC8E61E72C78900C39086 /* LaunchScreen.storyboard */; };
 		ACEFC8F21E72C78900C39086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC8E81E72C78900C39086 /* Main.storyboard */; };
 		ACEFC8F31E72C78900C39086 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC8EA1E72C78900C39086 /* Info.plist */; };
@@ -32,6 +36,11 @@
 
 /* Begin PBXFileReference section */
 		3EC5D6D859E30ED5168ADDCD /* Pods-CrossWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossWorld.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrossWorld/Pods-CrossWorld.debug.xcconfig"; sourceTree = "<group>"; };
+		464EE8B21E72EC7600044C70 /* LeftChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftChatCell.swift; sourceTree = "<group>"; };
+		464EE8B31E72EC7600044C70 /* RightChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightChatCell.swift; sourceTree = "<group>"; };
+		464EE8B51E72EC7600044C70 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		464EE8BA1E72EC8300044C70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = CrossWorld/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		464EE8BC1E72ECE000044C70 /* Messenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messenger.swift; sourceTree = "<group>"; };
 		AC4335BC1E72D19E00EFBF96 /* LoginDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDetailViewController.swift; sourceTree = "<group>"; };
 		ACB47C3E1E72D2D10059E114 /* ASTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTextField.swift; sourceTree = "<group>"; };
 		ACB47C411E72D8AF0059E114 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -45,7 +54,6 @@
 		ACEFC8CD1E72C62A00C39086 /* CrossWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrossWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEFC8E21E72C78900C39086 /* CrossWorld-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CrossWorld-Bridging-Header.h"; path = "../CrossWorld-Bridging-Header.h"; sourceTree = "<group>"; };
 		ACEFC8E31E72C78900C39086 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
-		ACEFC8E41E72C78900C39086 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		ACEFC8E71E72C78900C39086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACEFC8E91E72C78900C39086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		ACEFC8EA1E72C78900C39086 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -70,6 +78,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		464EE8B01E72EC7600044C70 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				464EE8B11E72EC7600044C70 /* Custom */,
+				464EE8B41E72EC7600044C70 /* ViewController */,
+				464EE8B61E72EC7600044C70 /* ViewModel */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		464EE8B11E72EC7600044C70 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				464EE8B21E72EC7600044C70 /* LeftChatCell.swift */,
+				464EE8B31E72EC7600044C70 /* RightChatCell.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		464EE8B41E72EC7600044C70 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				464EE8B51E72EC7600044C70 /* MessageViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		464EE8B61E72EC7600044C70 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		AC4335BB1E72D18800EFBF96 /* LoginDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +215,7 @@
 		ACEFC8EB1E72C78900C39086 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				464EE8BC1E72ECE000044C70 /* Messenger.swift */,
 				ACEFC8F41E72C7AE00C39086 /* User.swift */,
 			);
 			path = Model;
@@ -181,7 +224,7 @@
 		ACEFC8EC1E72C78900C39086 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				ACEFC8E41E72C78900C39086 /* Assets.xcassets */,
+				464EE8BA1E72EC8300044C70 /* Assets.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -201,6 +244,7 @@
 		ACEFC8EE1E72C78900C39086 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				464EE8B01E72EC7600044C70 /* Chat */,
 				ACB47C431E72DC210059E114 /* RegisterDetail */,
 				ACB47C401E72D8670059E114 /* Register */,
 				AC4335BB1E72D18800EFBF96 /* LoginDetail */,
@@ -312,8 +356,8 @@
 				ACEFC8F31E72C78900C39086 /* Info.plist in Resources */,
 				ACB47C541E72F9690059E114 /* DatePickerViewController.xib in Resources */,
 				ACEFC8F21E72C78900C39086 /* Main.storyboard in Resources */,
-				ACEFC8F01E72C78900C39086 /* Assets.xcassets in Resources */,
 				ACEFC8F11E72C78900C39086 /* LaunchScreen.storyboard in Resources */,
+				464EE8BB1E72EC8300044C70 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,10 +417,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB47C421E72D8AF0059E114 /* RegisterViewController.swift in Sources */,
+				464EE8B91E72EC7600044C70 /* MessageViewController.swift in Sources */,
 				ACEFC8FF1E72C9DD00C39086 /* AppViewController.swift in Sources */,
-				ACB47C3F1E72D2D10059E114 /* ASTextField.swift in Sources */,
+				ACB47C3F1E72D2D10059E114 /* ASTextField.swift in Sources */
 				ACB47C471E72EBD00059E114 /* AppAccess.swift in Sources */,
 				ACB47C4A1E72EDA00059E114 /* String+Extension.swift in Sources */,
+				464EE8B71E72EC7600044C70 /* LeftChatCell.swift in Sources */,
+				464EE8B81E72EC7600044C70 /* RightChatCell.swift in Sources */,
 				ACEFC8FD1E72C99500C39086 /* AppDefine.swift in Sources */,
 				ACB47C4F1E72F0CA0059E114 /* AppError.swift in Sources */,
 				AC4335BD1E72D19E00EFBF96 /* LoginDetailViewController.swift in Sources */,
@@ -387,6 +434,7 @@
 				ACB47C451E72DC380059E114 /* RegisterDetailViewController.swift in Sources */,
 				ACB47C4D1E72EEC80059E114 /* BannerManager.swift in Sources */,
 				ACEFC8F71E72C7C400C39086 /* Utils.swift in Sources */,
+				464EE8BD1E72ECE000044C70 /* Messenger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
