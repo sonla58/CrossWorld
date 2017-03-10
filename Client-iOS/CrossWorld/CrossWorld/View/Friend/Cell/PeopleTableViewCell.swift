@@ -1,5 +1,5 @@
 //
-//  HomeActivityTableViewCell.swift
+//  PeopleTableViewCell.swift
 //  CrossWorld
 //
 //  Created by Anh Son Le on 3/11/17.
@@ -7,18 +7,18 @@
 //
 
 import UIKit
+import IBAnimatable
 
-class HomeActivityTableViewCell: UITableViewCell {
+class PeopleTableViewCell: UITableViewCell {
 
-    // MARK: - Outlet
-    @IBOutlet weak var btnActivity: UIButton!
-    @IBOutlet weak var btnLesson: UIButton!
-    @IBOutlet weak var btnWord: UIButton!
-    @IBOutlet weak var btnFun: UIButton!
+    @IBOutlet weak var imgAvatar: AnimatableImageView!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var btnCall: UIButton!
+    @IBOutlet weak var btnMessage: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

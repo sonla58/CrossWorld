@@ -1,5 +1,5 @@
 //
-//  LanguageViewController.swift
+//  LessonsViewController.swift
 //  CrossWorld
 //
 //  Created by Anh Son Le on 3/11/17.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class LanguageViewController: AppViewController {
+class LessonsViewController: AppViewController {
 
     // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Declare
-    var viewModel = LanguageViewModel()
+    var viewModel = LessonViewModel()
     
     // MARK: - Define
     
@@ -25,7 +25,7 @@ class LanguageViewController: AppViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,18 +37,13 @@ class LanguageViewController: AppViewController {
     override func setupViewController() {
         self.typeViewController = .child
         self.typeNavigationBar = .normal
-        self.rightButtonType = .none
         self.leftButtonType = .back
-        self.title = "Bạn muốn học"
-        
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        self.title = "Bài học"
     }
 
 }
 
-// MARK: - TableView
-extension LanguageViewController: UITableViewDelegate, UITableViewDataSource {
+extension LessonsViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - TableviewDelegate
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -60,7 +55,7 @@ extension LanguageViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 186
+        return 332
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -82,10 +77,11 @@ extension LanguageViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - TableViewDatasource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: AppDefine.cellId.idLanguageCell, for: indexPath) as? LanguageTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: AppDefine.cellId.idCellLesson, for: indexPath) as? LessonTableViewCell {
             let model = viewModel.listCell[indexPath.row]
-            cell.imgCountry.image = UIImage.init(named: model.image)
-            cell.lblCountry.text = model.name
+            cell.lblTitle.text = model.title
+            cell.lblName.text = model.nameLesson
+            cell.lblAuthor.text = model.author
             return cell
         }
         return UITableViewCell()
@@ -98,30 +94,10 @@ extension LanguageViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - TableViewAction
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = viewModel.listCell[indexPath.row]
-        User.current.languageId = NSNumber(value: item.id)
-        
-        register()
+        //
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         //
     }
-    
-    func register(){
-        self.startAnimating()
-        viewModel.register { (isSucees) in
-            self.stopAnimating()
-            if isSucees{
-                _ = self.navigationController?.popToRootViewController(animated: true)
-                if let login = self.navigationController?.viewControllers.first as? LoginViewController {
-                    login.loginWithPhone()
-                }
-            }else{
-                //TODO: Error?
-            }
-        }
-    }
 }
-
-
