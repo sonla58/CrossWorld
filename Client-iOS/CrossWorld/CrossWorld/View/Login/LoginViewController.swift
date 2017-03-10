@@ -7,14 +7,21 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FBSDKShareKit
+import FBSDKMessengerShareKit
 
-class LoginViewController: AppViewController {
+class LoginViewController: AppViewController, FBSDKLoginButtonDelegate {
     
     // MARK: - Outlet
+    @IBOutlet weak var btnLoginWithFacebook: UIButton!
+    @IBOutlet weak var btnLoginWithPhoneNumber: UIButton!
+    @IBOutlet weak var btnCreatAcount: UIButton!
     
     // MARK: - Declare
     
     // MARK: - Define
+    let btnLoginFBButton = FBSDKLoginButton()
     
     // MARK: - Setup
     
@@ -22,7 +29,7 @@ class LoginViewController: AppViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        creatFBLoginButton()
         // Do any additional setup after loading the view.
     }
     
@@ -36,6 +43,28 @@ class LoginViewController: AppViewController {
         self.typeViewController = .root
         self.typeNavigationBar = .hidden
     }
+    @IBAction func btnLoginFBclick(_ sender: Any) {
+        self.btnLoginFBButton.sendActions(for: .touchUpInside)
+
+    }
+    
+    @IBAction func btnLoginFacebookClick(_ sender: Any) {
+        self.btnLoginFBButton.sendActions(for: .touchUpInside)
+    }
+    
+    func creatFBLoginButton(){
+        btnLoginFBButton.delegate = self
+        
+        btnLoginFBButton.readPermissions =
+            ["public_profile", "email", "user_friends"]
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+    }
     
     
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        
+    }
 }
