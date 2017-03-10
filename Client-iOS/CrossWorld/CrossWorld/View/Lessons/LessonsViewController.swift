@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  LessonsViewController.swift
 //  CrossWorld
 //
 //  Created by Anh Son Le on 3/11/17.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class HomeViewController: AppViewController {
+class LessonsViewController: AppViewController {
 
     // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Declare
-    var viewModel = HomeViewModel()
+    var viewModel = LessonViewModel()
     
     // MARK: - Define
     
@@ -25,7 +25,7 @@ class HomeViewController: AppViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,39 +35,27 @@ class HomeViewController: AppViewController {
     
     // MARK: - AppViewController
     override func setupViewController() {
-        self.typeViewController = .root
+        self.typeViewController = .child
         self.typeNavigationBar = .normal
-        self.rightButtonType = .notification
-        self.leftButtonType = .user("")
-        self.title = "Nhà"
-        self.navigationItem.title = "CrossWorld"
+        self.leftButtonType = .back
+        self.title = "Bài học"
     }
 
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension LessonsViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - TableviewDelegate
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else if section == 1 {
-            return viewModel.listCell.count
-        } else {
-            return 0
-        }
+        return viewModel.listCell.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 362
-        } else {
-            return 44
-        }
+        return 332
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -89,21 +77,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - TableViewDatasource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: AppDefine.cellId.idCellHomeActivity, for: indexPath) as? HomeActivityTableViewCell {
-                cell.btnFun.addTarget(self, action: #selector(goToLesson), for: .touchUpInside)
-                cell.btnWord.addTarget(self, action: #selector(goToLesson), for: .touchUpInside)
-                cell.btnLesson.addTarget(self, action: #selector(goToLesson), for: .touchUpInside)
-                cell.btnActivity.addTarget(self, action: #selector(goToLesson), for: .touchUpInside)
-                return cell
-            }
-        } else if indexPath.section == 1 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: AppDefine.cellId.idCellHomeDetail, for: indexPath) as? HomeDetailTableViewCell {
-                let model = viewModel.listCell[indexPath.row]
-                cell.img.image = UIImage.init(named: model.image)
-                cell.lblTitle.text = model.title
-                return cell
-            }
+        if let cell = tableView.dequeueReusableCell(withIdentifier: AppDefine.cellId.idCellLesson, for: indexPath) as? LessonTableViewCell {
+            let model = viewModel.listCell[indexPath.row]
+            cell.lblTitle.text = model.title
+            cell.lblName.text = model.nameLesson
+            cell.lblAuthor.text = model.author
+            return cell
         }
         return UITableViewCell()
     }
@@ -120,12 +99,5 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         //
-    }
-}
-
-// MARK: - Action
-extension HomeViewController {
-    func goToLesson() {
-        self.performSegue(withIdentifier: AppDefine.Segue.homeToLesson, sender: nil)
     }
 }
