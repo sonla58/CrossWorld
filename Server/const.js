@@ -62,6 +62,9 @@
     Const.msgConfigError = 'Error while getting config';
     Const.msgConfigIncorrectId = 'Incorrect Id';
 
+    // New user
+    Const.msgNewUser = 'New user success';
+
     // get room
     Const.msgGetRoom = 'get room';
 

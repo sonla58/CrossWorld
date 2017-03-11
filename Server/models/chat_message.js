@@ -9,7 +9,7 @@ module.exports.connect = function (callback) {
             type: Sequelize.INTEGER,
             primaryKey: true
         },
-        chat_id: {
+        room_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
@@ -18,12 +18,15 @@ module.exports.connect = function (callback) {
             allowNull: false
         },
         message: {
-            type: Sequelize.STRING,
+            type: Sequelize.STRING
         },
         image: {
-            type: Sequelize.STRING,
+            type: Sequelize.STRING
         },
-        delected: {
+        call_status: {
+            type: Sequelize.INTEGER
+        },
+        deleted: {
             type: Sequelize.BOOLEAN
         },
         create_at: {
@@ -103,7 +106,7 @@ exports.update = function (data, callback) {
         if (row) {
             row.update(data).then(function (r) {
                 callback(null, r);
-            }
+            })
         } else {
             callback(null, null);
         }
