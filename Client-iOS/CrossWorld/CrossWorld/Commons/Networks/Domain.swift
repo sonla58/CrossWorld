@@ -17,7 +17,7 @@ class Domain{
     static let DOMAIN_HTTPS = "https://" + DOAMIN_API
     static let DOMAIN_URL = IP + "api/"
     
-    static let URL_LOGIN = DOMAIN_URL + "/login"
+    static let URL_LOGIN = DOMAIN_URL + "login"
     
     static let URL_REGISTER = DOMAIN_URL + "/register"
     static let URL_VETIFY = DOMAIN_URL + "/customer/register/verify"
