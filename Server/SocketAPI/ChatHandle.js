@@ -26,6 +26,17 @@ ChatHandle.prototype.attach = function (io, socket) {
             }
             conn.end()
         })
+    });
+
+    socket.on('call', function (data) {
+        var call = {
+            call_id: data.call_id
+        };
+        socket.to(data.room_id).emit('coming-call', call, function () {
+            socket.on('answer', function (ans) {
+
+            })
+        })
     })
 
 };

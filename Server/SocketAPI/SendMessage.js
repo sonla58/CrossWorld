@@ -16,7 +16,7 @@ RoomHandle.prototype.attach = function (io, socket) {
     		room_id: data.room_id,
     		user_id: data.user_id,
     		create_at: new Date()
-    	}
+    	};
     	chatMessage.connect();
     	if(data.message) { //message
     		item.message = data.message;
@@ -32,7 +32,7 @@ RoomHandle.prototype.attach = function (io, socket) {
     					from: data.user_id,
     					time: item.create_at,
     					message: data.message
-    				}
+    				};
     				socket.to(data.room_id).emit('send-message', temp);
     			}
     		});
@@ -56,7 +56,7 @@ RoomHandle.prototype.attach = function (io, socket) {
 		    					from: data.user_id,
 		    					time: item.create_at,
 		    					image: data.image
-		    				}
+		    				};
 		    				socket.to(data.room_id).emit('send-message', temp);
 		    			}
 		    		});
@@ -68,7 +68,7 @@ RoomHandle.prototype.attach = function (io, socket) {
     		
     	}
 
-    })
+    });
 
 	function getAvatarName(id) {
 		var name = new Date().getTime() + id + ".png";
