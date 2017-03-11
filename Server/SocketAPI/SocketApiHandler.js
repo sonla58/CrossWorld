@@ -1,3 +1,9 @@
+var db = require('../config/database');
+var mysql = require('mysql');
+var Const = require('../const');
+var responseData = require('../models/responseData')
+global.clients = [];
+
 var SocketApiHandler = {
     io: null,
     nsp: null,
@@ -13,7 +19,7 @@ var SocketApiHandler = {
                 conn = mysql.createConnection(db);
                 conn.connect();
 
-                conn.query('SELECT room_id FROM chat WHERE (native_user || foreign_user) = ?', [data.user_id], function (err, result) {
+                conn.query('SELECT room_id FROM room WHERE (native_user || foreign_user) = ?', [data.user_id], function (err, result) {
                     if (err) {
                         console.log(err);
                         socket.emit('new-user', responseData.create(Const.successFalse, Const.msgError, Const.resError));
@@ -23,8 +29,9 @@ var SocketApiHandler = {
                                 socket.join(result[i].room_id);
                             }
                         }
+                        socket.user_id = data.user_id
+                        clients.push(socket);
                         if (callback) callback(1);
-                        require('./SendMessage').attach(io, socket);
                         require('./RoomHandle').attach(io, socket);
                         require('./ChatHandle').attach(io, socket);
                     }

@@ -75,6 +75,17 @@
     // send message
     Const.msgSendMessage = "Send message";
 
+    // get History 
+    Const.msgGetHistory = " Get history success";
+
+    // call
+    Const.msgAcceptCall = "Accept";
+    Const.msgTimeoutCall = "Timeout call";
+    Const.msgDelineCall = "Decline call";
+
+    Const.resTimeotCall = 152;
+    Const.resDeclineCall = 151;
+
     // Exports ----------------------------------------------
     module["exports"] = Const;
 
