@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2E2CD2C07DD80B3E57B74FC2 /* Pods_CrossWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F521D370B99DB0FB27A46F83 /* Pods_CrossWorld.framework */; };
+		46044D961E73AA2400510138 /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46044D951E73AA2400510138 /* PlayVideoViewController.swift */; };
+		46044D981E73AA6000510138 /* PlayVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46044D971E73AA6000510138 /* PlayVideoCollectionViewCell.swift */; };
 		464EE8B71E72EC7600044C70 /* LeftChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE8B21E72EC7600044C70 /* LeftChatCell.swift */; };
 		464EE8B81E72EC7600044C70 /* RightChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE8B31E72EC7600044C70 /* RightChatCell.swift */; };
 		464EE8B91E72EC7600044C70 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE8B51E72EC7600044C70 /* MessageViewController.swift */; };
@@ -68,6 +70,8 @@
 
 /* Begin PBXFileReference section */
 		3EC5D6D859E30ED5168ADDCD /* Pods-CrossWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossWorld.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrossWorld/Pods-CrossWorld.debug.xcconfig"; sourceTree = "<group>"; };
+		46044D951E73AA2400510138 /* PlayVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
+		46044D971E73AA6000510138 /* PlayVideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		464EE8B21E72EC7600044C70 /* LeftChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftChatCell.swift; sourceTree = "<group>"; };
 		464EE8B31E72EC7600044C70 /* RightChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightChatCell.swift; sourceTree = "<group>"; };
 		464EE8B51E72EC7600044C70 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +146,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46044D911E73AA1200510138 /* PlayVideo */ = {
+			isa = PBXGroup;
+			children = (
+				46044D921E73AA1200510138 /* Custom */,
+				46044D931E73AA1200510138 /* ViewController */,
+				46044D941E73AA1200510138 /* ViewModel */,
+			);
+			path = PlayVideo;
+			sourceTree = "<group>";
+		};
+		46044D921E73AA1200510138 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				46044D971E73AA6000510138 /* PlayVideoCollectionViewCell.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		46044D931E73AA1200510138 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				46044D951E73AA2400510138 /* PlayVideoViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		46044D941E73AA1200510138 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		464EE8B01E72EC7600044C70 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -596,6 +633,7 @@
 		ACEFC8EE1E72C78900C39086 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				46044D911E73AA1200510138 /* PlayVideo */,
 				ACB47C7F1E7362290059E114 /* Lessons */,
 				46D6D31D1E7347C0002A9018 /* Notification */,
 				46D6D3111E733D6F002A9018 /* User */,
@@ -790,6 +828,7 @@
 				46D6D31A1E733D9D002A9018 /* UserViewController.swift in Sources */,
 				464EE8B91E72EC7600044C70 /* MessageViewController.swift in Sources */,
 				4688280C1E730986005514DF /* SocketRequest.swift in Sources */,
+				46044D981E73AA6000510138 /* PlayVideoCollectionViewCell.swift in Sources */,
 				ACB47C821E73624A0059E114 /* LessonsViewController.swift in Sources */,
 				ACB47C781E7333460059E114 /* HomeDetailTableViewCell.swift in Sources */,
 				46D6D3181E733D6F002A9018 /* LogoutTableViewCell.swift in Sources */,
@@ -816,6 +855,7 @@
 				ACEFC8EF1E72C78900C39086 /* AppDelegate.swift in Sources */,
 				ACB47C521E72F9490059E114 /* DatePickerViewController.swift in Sources */,
 				ACB47C451E72DC380059E114 /* RegisterDetailViewController.swift in Sources */,
+				46044D961E73AA2400510138 /* PlayVideoViewController.swift in Sources */,
 				468828181E733143005514DF /* GroupTableViewCell.swift in Sources */,
 				46D6D3201E7347CD002A9018 /* NotificationViewController.swift in Sources */,
 				ACB47C4D1E72EEC80059E114 /* BannerManager.swift in Sources */,
