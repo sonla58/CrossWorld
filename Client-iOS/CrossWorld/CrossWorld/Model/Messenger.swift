@@ -34,3 +34,32 @@ class Messenger : EVObject{
 class HistoryMessage: EVObject{
     var history : [Messenger]?
 }
+
+extension String{
+    func getHourAndMinute() -> String?{
+        let formater = DateFormatter()
+        formater.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formater.timeZone = TimeZone(abbreviation: "UTC")
+        if let date = formater.date(from: self){
+            return date.stringFormDate()
+        }
+        
+        return nil
+    }
+}
+
+extension Date{
+    func stringFormDate() -> String{
+        let formater = DateFormatter()
+        formater.dateFormat = "HH:mm"
+        return formater.string(from: self)
+    }
+    
+    func string() -> String{
+        let formater = DateFormatter()
+        formater.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formater.timeZone = TimeZone(abbreviation: "UTC")
+        
+        return formater.string(from: self)
+    }
+}

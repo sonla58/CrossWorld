@@ -179,6 +179,7 @@ class MessageViewController: AppViewController , UITableViewDataSource, UITableV
             let mess = Messenger()
             mess.content = content
             mess.sender = User.current.user_id
+            mess.time = Date().string()
             
             if isSuccess{
                 mess.wasSendFail = true
@@ -236,6 +237,7 @@ class MessageViewController: AppViewController , UITableViewDataSource, UITableV
             if item.image != nil {
                 if let rightImage = tableView.dequeueReusableCell(withIdentifier: "LeftImageTableViewCell", for: indexPath) as? LeftImageTableViewCell{
                     rightImage.imgPhoto.kf.setImage(with: URL(string: item.image!))
+                    rightImage.lbTime.text = item.time?.getHourAndMinute()
                     if let avatar = room.avatar {
                         rightImage.imgAvatar.kf.setImage(with: URL(string: avatar))
                     }
@@ -245,6 +247,7 @@ class MessageViewController: AppViewController , UITableViewDataSource, UITableV
             
             let leftCell = tableView.dequeueReusableCell(withIdentifier: "LeftChatCell", for: indexPath) as! LeftChatCell
             leftCell.lbReceiveMsg.text = item.content
+            leftCell.lbTime.text = item.time?.getHourAndMinute()
             if let avatar = room.avatar {
                 leftCell.imgAvatar.kf.setImage(with: URL(string: avatar))
 
@@ -254,6 +257,7 @@ class MessageViewController: AppViewController , UITableViewDataSource, UITableV
             if item.image != nil {
                 if let rightImage = tableView.dequeueReusableCell(withIdentifier: "RightImageTableViewCell", for: indexPath) as? RightImageTableViewCell{
                     rightImage.imgPhoto.kf.setImage(with: URL(string: item.image!))
+                    rightImage.lbTime.text = item.time?.getHourAndMinute()
                     if let avatar = User.current.avatar{
                         rightImage.imgAvatar.kf.setImage(with: URL(string: avatar))
                     }
@@ -264,6 +268,7 @@ class MessageViewController: AppViewController , UITableViewDataSource, UITableV
             if item.photo != nil{
                 if let rightImage = tableView.dequeueReusableCell(withIdentifier: "RightImageTableViewCell", for: indexPath) as? RightImageTableViewCell{
                     rightImage.imgPhoto.image = item.photo
+                    rightImage.lbTime.text = item.time?.getHourAndMinute()
                     if let avatar = User.current.avatar{
                         rightImage.imgAvatar.kf.setImage(with: URL(string: avatar))
                     }
@@ -273,6 +278,7 @@ class MessageViewController: AppViewController , UITableViewDataSource, UITableV
             
             let rightCell = tableView.dequeueReusableCell(withIdentifier: "RightChatCell", for: indexPath) as! RightChatCell
             rightCell.lbSenderMsg.text = item.content
+            rightCell.lbTime.text = item.time?.getHourAndMinute()
             if let avatar = User.current.avatar{
                 rightCell.imgAvatar.kf.setImage(with: URL(string: avatar))
             }
@@ -331,6 +337,7 @@ class MessageViewController: AppViewController , UITableViewDataSource, UITableV
                 let mess = Messenger()
                 mess.photo = image
                 mess.sender = User.current.user_id
+                mess.time = Date().string()
                 self.viewModel.listMessenger.append(mess)
                 self.tbMessage.reloadData()
                 
