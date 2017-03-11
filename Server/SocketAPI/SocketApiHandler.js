@@ -29,7 +29,8 @@ var SocketApiHandler = {
                                 socket.join(result[i].room_id);
                             }
                         }
-                        socket.user_id = data.user_id
+                        socket.user_id = data.user_id;
+                        socket.status = 0;
                         clients.push(socket);
                         if (callback) callback(1);
                         require('./RoomHandle').attach(io, socket);

@@ -164,6 +164,9 @@ ChatHandle.prototype.attach = function (io, socket) {
         }, 20000);
     });
 
+    socket.on('end-call', function (data) {
+        socket.to(data.room_id).emit('end-call', {room_id: data.room_id})
+    });
 
     function getAvatarName(id) {
         var name = new Date().getTime() + id + ".png";
