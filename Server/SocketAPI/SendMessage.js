@@ -7,6 +7,7 @@ var chatMessage = require('../models/chat_message');
 var fs = require('fs');
 var conn;
 var rooms;
+var imageURL = require('../config/imageURL');
 
 RoomHandle.prototype.attach = function (io, socket) {
     var self = this;
@@ -25,56 +26,60 @@ RoomHandle.prototype.attach = function (io, socket) {
     				console.log(err);
     				callback(false);
     			} else {
-    				callback(true);
     				var temp = responseData.create(Const.successTrue, Const.msgSendMessage, Const.resNoErrorCode);
     				temp.data = {
     					room_id: data.room_id,
-    					from: data.user_id,
-    					time: item.create_at,
+    					sender: data.user_id,
+    					time: item.create_at.toISOString().replace(/T/, ' ').replace(/\..+/, ''),
     					message: data.message
     				}
+                    console.log(temp);
     				socket.to(data.room_id).emit('send-message', temp);
+                    callback(true);
     			}
     		});
     	}
 
     	if(data.image) { //image
-    		fs.writeFile(getAvatarName(data.user_id), data.image, function(err) {
+    		var name = getAvatarName(data.user_id);
+    		fs.writeFile("./public/image/user/" + name, data.image, function(err) {
 				if(err) {
 					console.log(err);
 					callback(false);
 				} else {
+					item.image = imageURL.user + name;
 					chatMessage.create(item, function(err) {
 		    			if (err) {
 		    				console.log(err);
 		    				callback(false);
 		    			} else {
-		    				callback(true);
 			    			var temp = responseData.create(Const.successTrue, Const.msgSendMessage, Const.resNoErrorCode);
 		    				temp.data = {
 		    					room_id: data.room_id,
-		    					from: data.user_id,
-		    					time: item.create_at,
+		    					sender: data.user_id,
+		    					time: item.create_at.toISOString().replace(/T/, ' ').replace(/\..+/, ''),
 		    					image: data.image
 		    				}
+                            console.log(temp)
 		    				socket.to(data.room_id).emit('send-message', temp);
+                            callback(true);
 		    			}
 		    		});
 				}
     		});
     	}
-
-    	if(data.call_video) {//call
-    		
-    	}
-
     })
+    
+    socket.on('typing', function(data, callback) {
+        socket.to(data.room_id).emit('typing', '');
+    })
+
 
 	function getAvatarName(id) {
 		var name = new Date().getTime() + id + ".png";
 
-		return "./public/image/user/" + name;
-	} 
+		return name;
+	}
 
 };
 

@@ -4,7 +4,7 @@ var sequelize = new Sequelize(db.database, db.user, db.password, db);
 
 var Room = undefined;
 module.exports.connect = function (callback) {
-    User = sequelize.define('Chat', {
+    Room = sequelize.define('Room', {
         room_id: {
             type: Sequelize.INTEGER,
             autoIncrement: true,
@@ -23,7 +23,7 @@ module.exports.connect = function (callback) {
         timestamps: false,
         createAt: false,
         updateAt: false,
-        tableName: 'chat'
+        tableName: 'room'
     });
 };
 

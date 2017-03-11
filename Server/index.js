@@ -9,6 +9,10 @@ app.get('/', function(req, res) {
 	res.sendFile(__dirname + "/views/index.html");
 });
 
+app.get('/client2', function(req, res) {
+	res.sendFile(__dirname + "/views/client2.html");
+});
+
 var WebAPIHandler = require('./api/WebAPIHandler');
 var SocketAPIHandler = require('./SocketAPI/SocketAPIHandler');
 

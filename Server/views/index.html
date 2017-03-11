@@ -16,29 +16,33 @@
 <body>
 <ul id="messages"></ul>
 <form action="">
-  <input id="m" autocomplete="off" /><button>Get Room</button>
+  <input id="m" autocomplete="off" /><button>chat</button>
 </form>
 <script src="/socket.io/socket.io.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
     var socket = io();
 
+    socket.emit('new-user', {user_id: 'pzqYuubhdW'}, function(d){
+        $('#messages').append($('<li>').text(JSON.stringify(d)));
+    })
+
     // $('form').submit(function () {
-    //     socket.emit('get-all-room', {user_id: 'aAblLBAV4K'});
+    //     socket.emit('get-all-room', {user_id: 'pzqYuubhdW'});
     //     $('#m').val('');
     //     return false;
     // });
 
-    // socket.on('get-all-room', function(msg){
-    //     $('#messages').append($('<li>').text(JSON.stringify(msg)));
-    // });
+    socket.on('get-all-room', function(msg){
+        $('#messages').append($('<li>').text(JSON.stringify(msg)));
+    });
 
     $('form').submit(function () {
         socket.emit('send-message', 
             {
-                user_id: 'aAblLBAV4K',
-                type: 2,
-                chat_id: 1,
+                user_id: 'pzqYuubhdW',
+                message: $('#m').val(),
+                room_id: 4
         });
         $('#m').val('');
         return false;

@@ -15,7 +15,7 @@ NewUser.prototype.attach = function (io, socket) {
         conn = mysql.createConnection(db);
         conn.connect();
 
-        conn.query('SELECT room_id FROM chat WHERE (native_user || foreign_user) = ?', [data.user_id], function (err, result) {
+        conn.query('SELECT room_id FROM room WHERE (native_user || foreign_user) = ?', [data.user_id], function (err, result) {
             if (err) {
                 console.log(err);
                 socket.emit('new-user', responseData.create(Const.successFalse, Const.msgError, Const.resError));
