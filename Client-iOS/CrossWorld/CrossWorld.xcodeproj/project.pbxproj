@@ -39,6 +39,8 @@
 		AC1F13141E73A9A200595C17 /* OutCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1F13121E73A9A200595C17 /* OutCallViewController.swift */; };
 		AC1F13151E73A9A200595C17 /* OutCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC1F13131E73A9A200595C17 /* OutCallViewController.xib */; };
 		AC4335BD1E72D19E00EFBF96 /* LoginDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4335BC1E72D19E00EFBF96 /* LoginDetailViewController.swift */; };
+		AC71938F1E73E99B00520F5D /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71938D1E73E99B00520F5D /* VideoCallViewController.swift */; };
+		AC7193901E73E99B00520F5D /* VideoCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC71938E1E73E99B00520F5D /* VideoCallViewController.xib */; };
 		ACB47C3F1E72D2D10059E114 /* ASTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C3E1E72D2D10059E114 /* ASTextField.swift */; };
 		ACB47C451E72DC380059E114 /* RegisterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C441E72DC380059E114 /* RegisterDetailViewController.swift */; };
 		ACB47C471E72EBD00059E114 /* AppAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C461E72EBD00059E114 /* AppAccess.swift */; };
@@ -116,6 +118,8 @@
 		AC1F13121E73A9A200595C17 /* OutCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutCallViewController.swift; sourceTree = "<group>"; };
 		AC1F13131E73A9A200595C17 /* OutCallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OutCallViewController.xib; sourceTree = "<group>"; };
 		AC4335BC1E72D19E00EFBF96 /* LoginDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDetailViewController.swift; sourceTree = "<group>"; };
+		AC71938D1E73E99B00520F5D /* VideoCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
+		AC71938E1E73E99B00520F5D /* VideoCallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoCallViewController.xib; sourceTree = "<group>"; };
 		ACB47C3E1E72D2D10059E114 /* ASTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTextField.swift; sourceTree = "<group>"; };
 		ACB47C441E72DC380059E114 /* RegisterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDetailViewController.swift; sourceTree = "<group>"; };
 		ACB47C461E72EBD00059E114 /* AppAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAccess.swift; sourceTree = "<group>"; };
@@ -438,6 +442,15 @@
 			path = LoginDetail;
 			sourceTree = "<group>";
 		};
+		AC71938C1E73E96C00520F5D /* VideoCall */ = {
+			isa = PBXGroup;
+			children = (
+				AC71938D1E73E99B00520F5D /* VideoCallViewController.swift */,
+				AC71938E1E73E99B00520F5D /* VideoCallViewController.xib */,
+			);
+			path = VideoCall;
+			sourceTree = "<group>";
+		};
 		ACB47C3D1E72D2C60059E114 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -720,6 +733,7 @@
 		ACEFC8EE1E72C78900C39086 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AC71938C1E73E96C00520F5D /* VideoCall */,
 				46044D911E73AA1200510138 /* PlayVideo */,
 				AC1F13111E73A98900595C17 /* InCall */,
 				AC1F13101E73A97B00595C17 /* OutCall */,
@@ -847,6 +861,7 @@
 				ACEFC8F21E72C78900C39086 /* Main.storyboard in Resources */,
 				ACB47C591E730AB30059E114 /* CountryPickerViewController.xib in Resources */,
 				ACEFC8F11E72C78900C39086 /* LaunchScreen.storyboard in Resources */,
+				AC7193901E73E99B00520F5D /* VideoCallViewController.xib in Resources */,
 				464EE8BB1E72EC8300044C70 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -949,6 +964,7 @@
 				468827F91E7308DA005514DF /* ConversationViewController.swift in Sources */,
 				ACB47C841E73634A0059E114 /* LessonViewModel.swift in Sources */,
 				ACB47C861E7364E80059E114 /* LessonTableViewCell.swift in Sources */,
+				AC71938F1E73E99B00520F5D /* VideoCallViewController.swift in Sources */,
 				AC1F13141E73A9A200595C17 /* OutCallViewController.swift in Sources */,
 				ACB47C5E1E7315140059E114 /* LanguageViewController.swift in Sources */,
 				ACEFC8EF1E72C78900C39086 /* AppDelegate.swift in Sources */,
