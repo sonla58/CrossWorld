@@ -69,7 +69,7 @@ RoomHandle.prototype.attach = function (io, socket) {
     		});
     	}
     })
-    
+
     socket.on('typing', function(data, callback) {
         socket.to(data.room_id).emit('typing', '');
     })
