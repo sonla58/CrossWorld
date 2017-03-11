@@ -22,7 +22,6 @@
 		468828081E730986005514DF /* APIHandles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468828021E730986005514DF /* APIHandles.swift */; };
 		468828091E730986005514DF /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468828031E730986005514DF /* APIRequest.swift */; };
 		4688280A1E730986005514DF /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468828041E730986005514DF /* Domain.swift */; };
-		4688280B1E730986005514DF /* SocketHandles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468828051E730986005514DF /* SocketHandles.swift */; };
 		4688280C1E730986005514DF /* SocketRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468828061E730986005514DF /* SocketRequest.swift */; };
 		4688280D1E730986005514DF /* TDUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468828071E730986005514DF /* TDUtils.swift */; };
 		468828111E7319B2005514DF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4688280F1E7319B2005514DF /* RegisterViewController.swift */; };
@@ -98,7 +97,6 @@
 		468828021E730986005514DF /* APIHandles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandles.swift; sourceTree = "<group>"; };
 		468828031E730986005514DF /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		468828041E730986005514DF /* Domain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
-		468828051E730986005514DF /* SocketHandles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketHandles.swift; sourceTree = "<group>"; };
 		468828061E730986005514DF /* SocketRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketRequest.swift; sourceTree = "<group>"; };
 		468828071E730986005514DF /* TDUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDUtils.swift; sourceTree = "<group>"; };
 		4688280F1E7319B2005514DF /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -315,7 +313,6 @@
 				468828021E730986005514DF /* APIHandles.swift */,
 				468828031E730986005514DF /* APIRequest.swift */,
 				468828041E730986005514DF /* Domain.swift */,
-				468828051E730986005514DF /* SocketHandles.swift */,
 				468828061E730986005514DF /* SocketRequest.swift */,
 			);
 			path = Networks;
@@ -913,7 +910,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				468828161E733131005514DF /* GroupViewController.swift in Sources */,
-				4688280B1E730986005514DF /* SocketHandles.swift in Sources */,
 				ACB47C7E1E7349290059E114 /* FriendViewModel.swift in Sources */,
 				468828081E730986005514DF /* APIHandles.swift in Sources */,
 				ACB47C631E7319900059E114 /* LanguageViewModel.swift in Sources */,
