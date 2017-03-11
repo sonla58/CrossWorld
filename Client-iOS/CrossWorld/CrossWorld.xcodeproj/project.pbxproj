@@ -41,6 +41,7 @@
 		AC4335BD1E72D19E00EFBF96 /* LoginDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4335BC1E72D19E00EFBF96 /* LoginDetailViewController.swift */; };
 		AC71938F1E73E99B00520F5D /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71938D1E73E99B00520F5D /* VideoCallViewController.swift */; };
 		AC7193901E73E99B00520F5D /* VideoCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC71938E1E73E99B00520F5D /* VideoCallViewController.xib */; };
+		AC9296101E74501F00F245CC /* VideoCallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92960F1E74501F00F245CC /* VideoCallManager.swift */; };
 		ACB47C3F1E72D2D10059E114 /* ASTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C3E1E72D2D10059E114 /* ASTextField.swift */; };
 		ACB47C451E72DC380059E114 /* RegisterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C441E72DC380059E114 /* RegisterDetailViewController.swift */; };
 		ACB47C471E72EBD00059E114 /* AppAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB47C461E72EBD00059E114 /* AppAccess.swift */; };
@@ -120,6 +121,7 @@
 		AC4335BC1E72D19E00EFBF96 /* LoginDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDetailViewController.swift; sourceTree = "<group>"; };
 		AC71938D1E73E99B00520F5D /* VideoCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
 		AC71938E1E73E99B00520F5D /* VideoCallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoCallViewController.xib; sourceTree = "<group>"; };
+		AC92960F1E74501F00F245CC /* VideoCallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCallManager.swift; sourceTree = "<group>"; };
 		ACB47C3E1E72D2D10059E114 /* ASTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTextField.swift; sourceTree = "<group>"; };
 		ACB47C441E72DC380059E114 /* RegisterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDetailViewController.swift; sourceTree = "<group>"; };
 		ACB47C461E72EBD00059E114 /* AppAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAccess.swift; sourceTree = "<group>"; };
@@ -451,6 +453,14 @@
 			path = VideoCall;
 			sourceTree = "<group>";
 		};
+		AC92960E1E744FF400F245CC /* VideoCallSignal */ = {
+			isa = PBXGroup;
+			children = (
+				AC92960F1E74501F00F245CC /* VideoCallManager.swift */,
+			);
+			path = VideoCallSignal;
+			sourceTree = "<group>";
+		};
 		ACB47C3D1E72D2C60059E114 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -719,6 +729,7 @@
 		ACEFC8ED1E72C78900C39086 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AC92960E1E744FF400F245CC /* VideoCallSignal */,
 				ACB639611E73E15B00B47F38 /* Lib */,
 				ACB47C551E730A6D0059E114 /* CountryPicker */,
 				ACB47C501E72F93A0059E114 /* DatePicker */,
@@ -964,6 +975,7 @@
 				468827F91E7308DA005514DF /* ConversationViewController.swift in Sources */,
 				ACB47C841E73634A0059E114 /* LessonViewModel.swift in Sources */,
 				ACB47C861E7364E80059E114 /* LessonTableViewCell.swift in Sources */,
+				AC9296101E74501F00F245CC /* VideoCallManager.swift in Sources */,
 				AC71938F1E73E99B00520F5D /* VideoCallViewController.swift in Sources */,
 				AC1F13141E73A9A200595C17 /* OutCallViewController.swift in Sources */,
 				ACB47C5E1E7315140059E114 /* LanguageViewController.swift in Sources */,

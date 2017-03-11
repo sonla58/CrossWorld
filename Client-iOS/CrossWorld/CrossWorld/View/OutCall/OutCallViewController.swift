@@ -28,6 +28,7 @@ class OutCallViewController: AppViewController, PopupContentViewController {
         case waitingAnswer
         case requestIncommingCall
         case incommingCall
+        case requestIncommingVideo
     }
     var popup = PopupController()
     var callState: CallState = .incommingCall {
@@ -60,12 +61,19 @@ class OutCallViewController: AppViewController, PopupContentViewController {
     
     override func setupUI() {
         switch callState {
-        case .requestIncommingCall:
+        case .requestIncommingVideo:
             self.btnAnswer.isHidden = false
             self.btnEndCall.isHidden = false
             self.centerBtnAnswerConstraint.constant = -90
             self.centerBtnEndConstraint.constant = 90
             self.lblTime.text = "Cuộc gọi video"
+            break
+        case .requestIncommingCall:
+            self.btnAnswer.isHidden = false
+            self.btnEndCall.isHidden = false
+            self.centerBtnAnswerConstraint.constant = -90
+            self.centerBtnEndConstraint.constant = 90
+            self.lblTime.text = "Cuộc gọi thoại"
             break
         case .waitingAnswer:
             self.btnAnswer.isHidden = true

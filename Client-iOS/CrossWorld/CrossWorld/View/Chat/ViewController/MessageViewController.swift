@@ -287,3 +287,16 @@ class MessageViewController: AppViewController , UITableViewDataSource, UITableV
         
     }
 }
+
+extension MessageViewController {
+    override func rightNaviButtonTapped() {
+        let request = CallRequestResponse()
+        request.avatar = room.avatar
+        request.callID = Int(Utils.random9DigitString()) as NSNumber?
+        request.roomId = room.room_id
+        request.hasVideo = 1
+        request.receiverId = room.user_id
+        request.fullName = room.full_name
+        VideoCallManager.share.makeCallRequest(request: request)
+    }
+}
