@@ -10,7 +10,7 @@ module.exports.connect = function (callback) {
             autoIncrement: true,
             primaryKey: true
         },
-        chat_id: {
+        room_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
@@ -19,12 +19,15 @@ module.exports.connect = function (callback) {
             allowNull: false
         },
         message: {
-            type: Sequelize.STRING,
+            type: Sequelize.STRING
         },
         image: {
-            type: Sequelize.STRING,
+            type: Sequelize.STRING
         },
-        delected: {
+        call_status: {
+            type: Sequelize.INTEGER
+        },
+        deleted: {
             type: Sequelize.BOOLEAN
         },
         create_at: {

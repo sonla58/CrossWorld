@@ -2,10 +2,10 @@ var Sequelize = require('sequelize');
 var db = require('../config/database.js');
 var sequelize = new Sequelize(db.database, db.user, db.password, db);
 
-var Chat = undefined;
+var Room = undefined;
 module.exports.connect = function (callback) {
     User = sequelize.define('Chat', {
-        chat_id: {
+        room_id: {
             type: Sequelize.INTEGER,
             autoIncrement: true,
             primaryKey: true
@@ -32,7 +32,7 @@ exports.disconnect = function (callback) {
 };
 
 exports.create = function (data, callback) {
-    var itemAttach = Chat.build(data);
+    var itemAttach = Room.build(data);
     itemAttach.save().then(function (row) {
         callback(null, row);
     }).catch(function (err) {
@@ -41,7 +41,7 @@ exports.create = function (data, callback) {
 };
 
 exports.findAll = function (callback) {
-    Chat.findAll({
+    Room.findAll({
         where: {}
     }).then(function (rows) {
         if (rows) {
@@ -55,9 +55,9 @@ exports.findAll = function (callback) {
 };
 
 exports.findById = function (id, callback) {
-    Chat.findOne({
+    Room.findOne({
         where: {
-            chat_id: id
+            room_id: id
         }
     }).then(function (row) {
         if (row) {
@@ -71,8 +71,8 @@ exports.findById = function (id, callback) {
 };
 
 exports.update = function (data, callback) {
-    Chat.findOne({
-        where: {chat_id: data.chat_id}
+    Room.findOne({
+        where: {room_id: data.room_id}
     }).then(function (row) {
         if (row) {
             row.update(data).then(function (r) {
