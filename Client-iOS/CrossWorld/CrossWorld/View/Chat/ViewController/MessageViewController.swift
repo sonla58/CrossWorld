@@ -79,7 +79,7 @@ class MessageViewController: AppViewController , UITableViewDataSource, UITableV
         
         initTableMessage()
         setup()
-        
+        getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,7 +88,6 @@ class MessageViewController: AppViewController , UITableViewDataSource, UITableV
         if self.viewModel.listMessenger.count != 0 {
             self.tbMessage.scrollToRow(at: IndexPath(row: self.viewModel.listMessenger.count - 1, section: 0), at: UITableViewScrollPosition.middle, animated: false)
         }
-        getData()
         self.tabBarController?.tabBar.isHidden = true
     }
     
@@ -210,6 +209,15 @@ class MessageViewController: AppViewController , UITableViewDataSource, UITableV
         return viewModel.listMessenger.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let item = viewModel.listMessenger[indexPath.row]
+        if item.image != nil || item.photo != nil {
+            return 250
+        }else{
+            return UITableViewAutomaticDimension
+        }
+    }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? LeftChatCell{
             cell.lbTime.isHidden = true
@@ -225,14 +233,49 @@ class MessageViewController: AppViewController , UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = viewModel.listMessenger[indexPath.row]
         if item.sender != User.current.user_id {
+            if item.image != nil {
+                if let rightImage = tableView.dequeueReusableCell(withIdentifier: "LeftImageTableViewCell", for: indexPath) as? LeftImageTableViewCell{
+                    rightImage.imgPhoto.kf.setImage(with: URL(string: item.image!))
+                    if let avatar = room.avatar {
+                        rightImage.imgAvatar.kf.setImage(with: URL(string: avatar))
+                    }
+                    return rightImage
+                }
+            }
+            
             let leftCell = tableView.dequeueReusableCell(withIdentifier: "LeftChatCell", for: indexPath) as! LeftChatCell
             leftCell.lbReceiveMsg.text = item.content
-            leftCell.imgAvatar.backgroundColor = UIColor.blue
+            if let avatar = room.avatar {
+                leftCell.imgAvatar.kf.setImage(with: URL(string: avatar))
+
+            }
             return leftCell
         }else{
+            if item.image != nil {
+                if let rightImage = tableView.dequeueReusableCell(withIdentifier: "RightImageTableViewCell", for: indexPath) as? RightImageTableViewCell{
+                    rightImage.imgPhoto.kf.setImage(with: URL(string: item.image!))
+                    if let avatar = User.current.avatar{
+                        rightImage.imgAvatar.kf.setImage(with: URL(string: avatar))
+                    }
+                    return rightImage
+                }
+            }
+            
+            if item.photo != nil{
+                if let rightImage = tableView.dequeueReusableCell(withIdentifier: "RightImageTableViewCell", for: indexPath) as? RightImageTableViewCell{
+                    rightImage.imgPhoto.image = item.photo
+                    if let avatar = User.current.avatar{
+                        rightImage.imgAvatar.kf.setImage(with: URL(string: avatar))
+                    }
+                    return rightImage
+                }
+            }
+            
             let rightCell = tableView.dequeueReusableCell(withIdentifier: "RightChatCell", for: indexPath) as! RightChatCell
             rightCell.lbSenderMsg.text = item.content
-            rightCell.imgAvatar.backgroundColor = UIColor.green
+            if let avatar = User.current.avatar{
+                rightCell.imgAvatar.kf.setImage(with: URL(string: avatar))
+            }
             
             if indexPath.row == self.viewModel.listMessenger.count - 1 && item.wasSendFail == true {
                 rightCell.imgState.image = #imageLiteral(resourceName: "TGMessageUnsentButton")
@@ -281,10 +324,40 @@ class MessageViewController: AppViewController , UITableViewDataSource, UITableV
     
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         imagePickerController.dismiss(animated: true, completion: nil)
+        
+        if images.count != 0 {
+            for item in images {
+                let image = item.resizeImage(newWidth: UIScreen.main.bounds.width)
+                let mess = Messenger()
+                mess.photo = image
+                mess.sender = User.current.user_id
+                self.viewModel.listMessenger.append(mess)
+                self.tbMessage.reloadData()
+                
+                self.viewModel.sendNewPhoto(room_id: (self.room.room_id?.stringValue)!, image: image, complite: { (isSuccess) in
+                    
+                })
+            }
+        }
     }
     
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         
+    }
+    
+}
+
+extension UIImage{
+    func resizeImage(newWidth: CGFloat) -> UIImage {
+        
+        let scale = newWidth / self.size.width
+        let newHeight = self.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        self.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
     }
 }
 
