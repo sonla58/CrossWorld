@@ -1,3 +1,4 @@
+var chat = require('../models/chat');
 var SocketApiHandler = {
     io: null,
     nsp: null,
@@ -9,6 +10,7 @@ var SocketApiHandler = {
         this.nsp.sockets.on('connection', function (socket) {
             console.log('New connection');
 
+            require('./SendMessage').attach(io, socket);
             require('./RoomHandle').attach(io, socket);
             require('./ChatHandle').attach(io, socket);
 

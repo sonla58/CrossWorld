@@ -7,6 +7,7 @@ module.exports.connect = function (callback) {
     User = sequelize.define('Chat', {
         chat_id: {
             type: Sequelize.INTEGER,
+            autoIncrement: true,
             primaryKey: true
         },
         native_user: {
@@ -76,7 +77,7 @@ exports.update = function (data, callback) {
         if (row) {
             row.update(data).then(function (r) {
                 callback(null, r);
-            }
+            })
         } else {
             callback(null, null);
         }

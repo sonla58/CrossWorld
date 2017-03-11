@@ -69,6 +69,9 @@
     Const.msgTokenSuccess = "Token success";
     Const.msgNotValidToken = "Not valid token";
 
+    // send message
+    Const.msgSendMessage = "Send message";
+
     // Exports ----------------------------------------------
     module["exports"] = Const;
 
