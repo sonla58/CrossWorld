@@ -64,6 +64,17 @@ extension String{
         
         return nil
     }
+    
+    func getDate() -> Date? {
+        let formater = DateFormatter()
+        formater.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formater.timeZone = TimeZone(abbreviation: "UTC")
+        if let date = formater.date(from: self){
+            return date
+        }
+        
+        return nil
+    }
 }
 
 extension Date{
