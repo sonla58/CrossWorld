@@ -79,6 +79,7 @@
     Const.msgGetHistory = " Get history success";
 
     // call
+    Const.msgCall = "Call";
     Const.msgAcceptCall = "Accept";
     Const.msgTimeoutCall = "Timeout call";
     Const.msgDelineCall = "Decline call";
@@ -88,6 +89,8 @@
     Const.resTimeotCall = 152;
     Const.resDeclineCall = 151;
 
+    // get Lesson
+    Const.msgGetLesson = "Get lesson";
     // Exports ----------------------------------------------
     module["exports"] = Const;
 
