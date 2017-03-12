@@ -24,7 +24,9 @@ class HomeViewController: AppViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.newClient()
+        viewModel.newClient { [weak self] in
+            self?.listenCallRequest()
+        }
         // Do any additional setup after loading the view.
     }
     

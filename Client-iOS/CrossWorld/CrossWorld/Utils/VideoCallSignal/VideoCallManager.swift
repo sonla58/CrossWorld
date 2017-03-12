@@ -48,11 +48,19 @@ class VideoCallManager {
         }
     }
     
+    func stopReceiveCall() {
+        client.off(Event.callRequest.rawValue)
+    }
+    
     func listenCallDrop(completeHandle:(()->())?) {
         client.off(Event.callCancel.rawValue)
         client.on(Event.callCancel.rawValue) { (data, ack) in
             completeHandle?()
         }
+    }
+    
+    func stopListenCallDrop() {
+        client.off(Event.callCancel.rawValue)
     }
     
     func listenCallStatus(completeHandle:((Status)->())?) {
@@ -77,16 +85,24 @@ class VideoCallManager {
         }
     }
     
+    func stopListenCallStatus() {
+        client.off(Event.callStatus.rawValue)
+    }
+    
     // MARK: - Emit
     func makeCallRequest(request: CallRequestResponse) {
         self.callRequest = request
         let param: [String: Any] = [
             "room_id": request.roomId?.intValue ?? "",
             "call_id": request.callID?.intValue ?? "",
-            "receiverId": request.receiverId ?? "",
+            "receiver_id": request.receiverId ?? "",
             "hasVideo": request.hasVideo?.intValue ?? ""
         ]
-        self.client.emit(Event.callRequest.rawValue, param)
+        print(param)
+        let ack = self.client.emitWithAck(Event.callRequest.rawValue, param)
+        ack.timingOut(after: 10) { (data) in
+            print(data)
+        }
     }
     
     func dropCall() {

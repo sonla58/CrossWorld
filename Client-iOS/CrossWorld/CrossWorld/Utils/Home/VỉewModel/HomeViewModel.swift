@@ -21,7 +21,9 @@ class HomeViewModel {
         CellDescription(title: "Kết quả học tập", image: "home_resource")
     ]
     
-    func newClient(){
-        SocketRequest.share.login()
+    func newClient(completeHandle:(()->())?){
+        SocketRequest.share.login { 
+            completeHandle?()
+        }
     }
 }

@@ -371,5 +371,6 @@ extension MessageViewController {
         request.receiverId = room.user_id
         request.fullName = room.full_name
         VideoCallManager.share.makeCallRequest(request: request)
+        self.showCall(request: request, callState: OutCallViewController.CallState.waitingAnswer)
     }
 }

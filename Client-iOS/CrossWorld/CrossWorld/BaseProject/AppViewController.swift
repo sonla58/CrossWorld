@@ -241,14 +241,16 @@ extension AppViewController {
             PopupCustomOption.layout(PopupController.PopupLayout.center),
             ]).show(callVC)
         _ = callVC.popup.didCloseHandler { [weak self] (_) in
-            let videoVC = VideoCallViewController(nibName: "VideoCallViewController", bundle: nil)
-            self?.navigationController?.present(videoVC, animated: true, completion: nil)
+            if callVC.isAccept {
+                let videoVC = VideoCallViewController(nibName: "VideoCallViewController", bundle: nil)
+                self?.navigationController?.present(videoVC, animated: true, completion: nil)
+            }
         }
     }
     
     func listenCallRequest() {
         VideoCallManager.share.startReceiveCall { [weak self] in
-            self?.showCall(request: VideoCallManager.share.callRequest, callState: OutCallViewController.CallState.incommingCall)
+            self?.showCall(request: VideoCallManager.share.callRequest, callState: OutCallViewController.CallState.requestIncommingVideo)
         }
     }
 }
