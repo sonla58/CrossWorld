@@ -2546,13 +2546,30 @@
                     <view key="view" contentMode="scaleToFill" id="BPD-EA-ScE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="img_noti" translatesAutoresizingMaskIntoConstraints="NO" id="tGR-6x-4L9">
+                                <rect key="frame" x="150" y="120" width="75" height="80"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn không có thông báo nào" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMl-hx-Uii">
+                                <rect key="frame" x="77" y="217" width="220" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tGR-6x-4L9" firstAttribute="top" secondItem="qIE-ka-QEx" secondAttribute="bottom" constant="56" id="AIL-u7-5kO"/>
+                            <constraint firstItem="UMl-hx-Uii" firstAttribute="top" secondItem="tGR-6x-4L9" secondAttribute="bottom" constant="17" id="T4I-KL-NxK"/>
+                            <constraint firstItem="UMl-hx-Uii" firstAttribute="centerX" secondItem="tGR-6x-4L9" secondAttribute="centerX" id="om8-np-YhY"/>
+                            <constraint firstItem="tGR-6x-4L9" firstAttribute="centerX" secondItem="BPD-EA-ScE" secondAttribute="centerX" id="w8z-M0-L6r"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LZ7-bH-Uef"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faa-4h-Fr2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="889" y="2319"/>
+            <point key="canvasLocation" x="888.79999999999995" y="2318.5907046476764"/>
         </scene>
         <!--New Pass View Controller-->
         <scene sceneID="sUR-EE-0WJ">
@@ -2685,6 +2702,7 @@
         <image name="home_lesson" width="176" height="165"/>
         <image name="home_word" width="176" height="165"/>
         <image name="ic_next" width="16" height="16"/>
+        <image name="img_noti" width="75" height="80"/>
         <image name="language_English" width="375" height="186"/>
         <image name="lesson_author" width="59" height="59"/>
         <image name="lesson_demo" width="335" height="224"/>
