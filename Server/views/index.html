@@ -25,7 +25,7 @@
   <input id="m3" autocomplete="off" /><button>chat</button>
 </form>
 <form  id="form4" action="">
-  <input id="m4" autocomplete="off" /><button>get</button>
+  <input id="m4" autocomplete="off" /><button>create room</button>
 </form>
 <script src="/socket.io/socket.io.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
@@ -43,7 +43,9 @@
     // });
 
     $('#form4').submit(function () {
-        socket.emit('get-lesson', {language_id: 1});
+        socket.emit('create-room', {user_id: 'aAblLBAV4K', other_user: 'B7I745Js5T'}, function(d){
+            $('#messages').append($('<li>').text(JSON.stringify(d)));
+        });
         $('#m4').val('');
         return false;
     });

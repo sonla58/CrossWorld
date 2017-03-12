@@ -18,7 +18,8 @@ LessonHandle.prototype.attach = function (io, socket) {
     			console.log(err);
     			socket.emit('get-lesson', responseData.create(Const.successFalse, Const.msgError, Const.resError));
     		} else {
-    			result = JSON.parse(JSON.stringify(result[0]));
+                result = JSON.stringify(result[0])
+    			result = JSON.parse(result);
     			temp = responseData.create(Const.successTrue, Const.msgGetLesson, Const.resNoErrorCode);
     			temp.data = result;
     			socket.emit('get-lesson', temp);

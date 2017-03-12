@@ -34,6 +34,49 @@ ChatHandle.prototype.attach = function (io, socket) {
         })
     });
 
+    socket.on('create-room', function (data, callback) {
+        console.log('create-room');
+        if(callback) {
+            var room = require('../models/room');
+            var item = {
+                native_user: data.other_user,
+                foreign_user: socket.user_id
+            }
+            var temp;
+            room.connect();
+            room.findByUser(item, function(err, result) {
+                if(err) {
+                    console.log(err);
+                    callback(responseData.create(Const.successFalse, Const.msgError, Const.resError));
+                } else {
+                    if(result) {
+                        temp = responseData.create(Const.successTrue, Const.msgCreateRoom, Const.resNoErrorCode);
+                        temp.data = {
+                            room_id: result.room_id
+                        }
+                        callback(temp);
+                    } else {
+                        conn = mysql.createConnection(db);
+                        conn.connect();
+                        conn.query('Insert into room set native_user=?, foreign_user=?', [item.native_user, item.foreign_user], function(err, r){
+                            if(err) {
+                                console.log(err);
+                                callback(responseData.create(Const.successFalse, Const.msgError, Const.resError));
+                            } else {
+                                temp = responseData.create(Const.successTrue, Const.msgCreateRoom, Const.resNoErrorCode);
+                                temp.data = {
+                                    room_id: r['insertId']
+                                }
+                                callback(temp);
+                            }
+                            conn.end();
+                        })
+                    }
+                }
+            });
+        }
+    });
+
     socket.on('send-message', function (data, callback) {
         console.log('send-message');
         var item = {

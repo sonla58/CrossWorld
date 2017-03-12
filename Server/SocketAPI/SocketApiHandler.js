@@ -46,7 +46,7 @@ var SocketApiHandler = {
                         if (callback) callback(1);
                         require('./RoomHandle').attach(io, socket);
                         require('./ChatHandle').attach(io, socket);
-                        require('./LessonHandle').attach(io, socket);
+                        // require('./LessonHandle').attach(io, socket);
                     }
                     conn.end()
                 })

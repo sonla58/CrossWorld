@@ -68,6 +68,9 @@
     // get room
     Const.msgGetRoom = 'get room';
 
+    // create room
+    Const.msgCreateRoom = 'Create room';
+
     // socket token
     Const.msgTokenSuccess = "Token success";
     Const.msgNotValidToken = "Not valid token";
