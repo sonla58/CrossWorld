@@ -21,7 +21,7 @@ class FriendViewController: AppViewController {
         didSet {
             if listRandomUser.count > 0 {
                 let des = FriendViewModel.SpotyCellDescription(title: "Ngẫu nhiên", users: listRandomUser)
-                self.viewModel.listSpotyCell.append(des)
+                self.viewModel.listSpotyCell = [des]
                 self.tableView.reloadData()
             }
         }
