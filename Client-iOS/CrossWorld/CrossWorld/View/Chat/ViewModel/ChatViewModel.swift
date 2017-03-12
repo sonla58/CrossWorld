@@ -109,42 +109,23 @@ class ChatViewModel{
         SocketRequest.share.appSocket.off(SocketEvent.SEND_MESSAGE)
         SocketRequest.share.appSocket.on(SocketEvent.SEND_MESSAGE) { [weak self] (data, ack) in
             //Test self push noti
-            
-            if let data = data.first as? NSDictionary{
-                let res = ResObject(dictionary: data)
-                if let data = res.data{
-                    let room = Messenger(dictionary: data)
-                    self?.listMessenger.append(room)
-                    complite(true)
+            if let selfStrong = self{
+                if let data = data.first as? NSDictionary{
+                    let res = ResObject(dictionary: data)
+                    if let data = res.data{
+                        let room = Messenger(dictionary: data)
+                        selfStrong.listMessenger.append(room)
+                        complite(true)
+                    }else{
+                        complite(false)
+                    }
                 }else{
                     complite(false)
                 }
-            }else{
-                complite(false)
             }
         }
     }
     
-    func showAlert(title: String, body: String, image: UIImage){
-        let view = MessageView.viewFromNib(layout: .CardView)
-        
-        // Theme message elements with the warning style.
-        view.configureTheme(.info)
-        
-        // Add a drop shadow.
-        view.configureDropShadow()
-        
-        // Set message title, body, and icon. Here, we're overriding the default warning
-        // image with an emoji character.
-        view.configureContent(title: title, body: body, iconImage: image)
-        
-        view.configureTheme(backgroundColor: UIColor.white, foregroundColor: AppDefine.AppColor.pink)
-        // Show the message.
-        var config = SwiftMessages.Config()
-        config.presentationContext = .window(windowLevel: UIWindowLevelAlert)
-        config.duration = .seconds(seconds: 3)
-        SwiftMessages.show(config: config, view: view)
-    }
 }
 
 

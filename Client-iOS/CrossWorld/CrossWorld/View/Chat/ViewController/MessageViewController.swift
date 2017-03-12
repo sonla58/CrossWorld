@@ -251,11 +251,16 @@ class MessageViewController: AppViewController , UITableViewDataSource, UITableV
             }
             
             let leftCell = tableView.dequeueReusableCell(withIdentifier: "LeftChatCell", for: indexPath) as! LeftChatCell
-            if item.call_status?.intValue != 0 {
-                leftCell.lbReceiveMsg.attributedText = NSMutableAttributedString().italic(item.getCallStatus()!, color: UIColor.white)
+            if let call = item.call_status {
+                if call.intValue != 0 {
+                    leftCell.lbReceiveMsg.attributedText = NSMutableAttributedString().italic(item.getCallStatus()!, color: UIColor.white)
+                }else{
+                    leftCell.lbReceiveMsg.text = item.content
+                }
             }else{
                 leftCell.lbReceiveMsg.text = item.content
             }
+           
             leftCell.lbTime.text = item.time?.getHourAndMinute()
             if let avatar = room.avatar {
                 leftCell.imgAvatar.kf.setImage(with: URL(string: avatar))
@@ -286,8 +291,12 @@ class MessageViewController: AppViewController , UITableViewDataSource, UITableV
             }
             
             let rightCell = tableView.dequeueReusableCell(withIdentifier: "RightChatCell", for: indexPath) as! RightChatCell
-            if item.call_status?.intValue != 0 {
-                rightCell.lbSenderMsg.attributedText = NSMutableAttributedString().italic(item.getCallStatus()!, color: UIColor.red)
+            if let call = item.call_status{
+                if call.intValue != 0 {
+                    rightCell.lbSenderMsg.attributedText = NSMutableAttributedString().italic(item.getCallStatus()!, color: UIColor.red)
+                }else{
+                    rightCell.lbSenderMsg.text = item.content
+                }
             }else{
                 rightCell.lbSenderMsg.text = item.content
             }

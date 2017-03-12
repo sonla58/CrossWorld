@@ -16,6 +16,7 @@ class Messenger : EVObject{
     var sender: String?
     var content: String?
     var time: String?
+    
     var avatar: String?
     var full_name: String?
     
