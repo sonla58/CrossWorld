@@ -146,6 +146,7 @@ class ConversationViewController: AppViewController, UITableViewDelegate, UITabl
                 
                 cell.lbName.text = item.full_name
                 cell.lbLastMess.text = item.message
+                cell.lbTime.text = item.time?.getHourAndMinute()
                 
             }
             
