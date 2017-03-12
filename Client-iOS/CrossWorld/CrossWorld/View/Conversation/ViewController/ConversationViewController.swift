@@ -101,13 +101,13 @@ class ConversationViewController: AppViewController, UITableViewDelegate, UITabl
         switch segment.selectedSegmentIndex {
             
         case 0:
-            return viewModel.room?.friend_room?.count ?? 0
+            return viewModel.room?.friend_room.count ?? 0
         case 1:
             
-            return viewModel.room?.native_room?.count ?? 0
+            return viewModel.room?.native_room.count ?? 0
             
         case 2:
-            return viewModel.room?.foreign_room?.count ?? 0
+            return viewModel.room?.foreign_room.count ?? 0
             
         default:
             return 0
@@ -178,13 +178,13 @@ class ConversationViewController: AppViewController, UITableViewDelegate, UITabl
         switch segment.selectedSegmentIndex {
         case 0:
             
-            return (viewModel.room?.friend_room?[index])
+            return (viewModel.room?.friend_room[index])
             
         case 1:
-            return (viewModel.room?.native_room?[index])
+            return (viewModel.room?.native_room[index])
             
         case 2:
-            return (viewModel.room?.foreign_room?[index])
+            return (viewModel.room?.foreign_room[index])
             
         default:
             return nil

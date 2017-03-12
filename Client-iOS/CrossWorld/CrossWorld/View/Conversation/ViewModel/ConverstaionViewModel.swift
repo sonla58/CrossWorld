@@ -7,22 +7,20 @@
 //
 
 import Foundation
+import SwiftDate
 
 class ConverstaionViewModel{
     var room: Room? {
         didSet{
-            if let room = room{
-                room.friend_room = [RoomDetail]()
+            if let room = room {
                 
-                if let homtows = room.native_room{
-                    room.friend_room = homtows
-                }
-                
-                if let other = room.foreign_room{
-                    for item in other{
-                        room.friend_room?.insert(item, at: Int(arc4random_uniform(UInt32(room.friend_room!.count))))
+                room.friend_room = room.foreign_room + room.native_room
+                room.friend_room.sort(by: { (item1, item2) -> Bool in
+                    if let date1 = item1.time?.getDate(), let date2 = item2.time?.getDate() {
+                        return date1 > date2
                     }
-                }
+                    return false
+                })
             }
         }
     }
