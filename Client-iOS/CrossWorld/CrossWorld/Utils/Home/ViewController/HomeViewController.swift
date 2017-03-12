@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeViewController: AppViewController {
-
+    
     // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,6 +25,26 @@ class HomeViewController: AppViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.newClient()
+        viewModel.onGetNewMessage { [weak self] (mess) in
+            if self?.tabBarController?.selectedIndex == 1{
+                if let navi = self?.tabBarController?.viewControllers?[1] as? UINavigationController{
+                    if let top = navi.viewControllers.last as? MessageViewController{
+                        if top.room.room_id?.intValue == mess.room_id?.intValue {
+                            return
+                        }
+                    }
+                }
+            }
+            self?.viewModel.showAlert(mess: mess, tapHandle: {
+                self?.tabBarController?.selectedIndex = 1
+                if let navi = self?.tabBarController?.viewControllers?[1] as? UINavigationController{
+                    if navi.viewControllers.count >= 2  {
+                        navi.popToRootViewController(animated: true)
+                    }
+                }
+            })
+        }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -42,7 +62,7 @@ class HomeViewController: AppViewController {
         self.title = "Nhà"
         self.navigationItem.title = "CrossWorld"
     }
-
+    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {

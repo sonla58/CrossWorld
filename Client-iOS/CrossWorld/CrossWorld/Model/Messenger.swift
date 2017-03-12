@@ -16,6 +16,8 @@ class Messenger : EVObject{
     var sender: String?
     var content: String?
     var time: String?
+    var avatar: String?
+    var full_name: String?
     
     var wasRead = false
     var wasSend = false
@@ -28,6 +30,21 @@ class Messenger : EVObject{
     
     override func propertyMapping() -> [(keyInObject: String?, keyInResource: String?)] {
         return [("content", "message")]
+    }
+    
+    func getCallStatus()->String?{
+        switch call_status!.intValue {
+        case 0:
+            return nil
+        case 1:
+            return "Đã gọi"
+        case 2:
+            return "Cuộc gọi nhỡ"
+        case 3:
+            return "Cuộc gọi bị từ chối"
+        default:
+            return ""
+        }
     }
 }
 

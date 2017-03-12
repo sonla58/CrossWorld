@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import UIKit
+import SwiftMessages
 
 class ChatViewModel{
     
@@ -107,6 +108,8 @@ class ChatViewModel{
     func onGetNewMessage(complite: @escaping (_ isComplite: Bool)->Void){
         SocketRequest.share.appSocket.off(SocketEvent.SEND_MESSAGE)
         SocketRequest.share.appSocket.on(SocketEvent.SEND_MESSAGE) { [weak self] (data, ack) in
+            //Test self push noti
+            
             if let data = data.first as? NSDictionary{
                 let res = ResObject(dictionary: data)
                 if let data = res.data{
@@ -121,7 +124,30 @@ class ChatViewModel{
             }
         }
     }
+    
+    func showAlert(title: String, body: String, image: UIImage){
+        let view = MessageView.viewFromNib(layout: .CardView)
+        
+        // Theme message elements with the warning style.
+        view.configureTheme(.info)
+        
+        // Add a drop shadow.
+        view.configureDropShadow()
+        
+        // Set message title, body, and icon. Here, we're overriding the default warning
+        // image with an emoji character.
+        view.configureContent(title: title, body: body, iconImage: image)
+        
+        view.configureTheme(backgroundColor: UIColor.white, foregroundColor: AppDefine.AppColor.pink)
+        // Show the message.
+        var config = SwiftMessages.Config()
+        config.presentationContext = .window(windowLevel: UIWindowLevelAlert)
+        config.duration = .seconds(seconds: 3)
+        SwiftMessages.show(config: config, view: view)
+    }
 }
+
+
 
 
 
