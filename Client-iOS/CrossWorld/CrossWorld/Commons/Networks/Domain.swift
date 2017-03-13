@@ -9,7 +9,8 @@
 import Foundation
 
 class Domain{
-    static let IP = "http://54.169.121.38:80/"
+    static let IP = "http://172.20.10.7:3000/"
+    //static let IP = "http://54.169.121.38:80/"
     
     static let DOAMIN_SOCKET = IP
     static let DOAMIN_API = IP + ":8443"

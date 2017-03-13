@@ -232,6 +232,7 @@ extension AppViewController {
 extension AppViewController {
     func showCall(request: CallRequestResponse, callState: OutCallViewController.CallState) {
         self.view.endEditing(true)
+        
         let callVC = OutCallViewController()
         callVC.callState = callState
         callVC.popup = PopupController.create(self.tabBarController ?? self.navigationController ?? self).customize([

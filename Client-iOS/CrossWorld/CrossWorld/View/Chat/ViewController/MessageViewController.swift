@@ -43,7 +43,7 @@ class MessageViewController: AppViewController , UITableViewDataSource, UITableV
     }
     
     func getData(){
-        self.startAnimating()
+        BannerManager.share.showWaiting(withContent: "Đang tải", isStatusLevel: false, inViewController: self)
         viewModel.sendGetMessage(room_id: "\(room.room_id!.intValue)", page: "1") {
             
         }
@@ -61,7 +61,7 @@ class MessageViewController: AppViewController , UITableViewDataSource, UITableV
         }
         
         viewModel.onGetMessage { [weak self] (isSuccess) in
-            self?.stopAnimating()
+            BannerManager.share.hideWaiting()
             if isSuccess{
                 self?.tbMessage.reloadData()
                 if self?.viewModel.listMessenger.count != 0 {

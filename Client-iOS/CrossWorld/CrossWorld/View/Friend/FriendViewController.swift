@@ -16,7 +16,7 @@ class FriendViewController: AppViewController {
     
     // MARK: - Declare
     var viewModel = FriendViewModel()
-    
+    var isCreatRoom = false
     var listRandomUser: [User] = [] {
         didSet {
             if listRandomUser.count > 0 {
@@ -194,6 +194,13 @@ extension FriendViewController {
 //    }
     
     func createRoom(_ sender: UIButton) {
+        guard isCreatRoom == false else {
+            return
+        }
+        if isCreatRoom == false{
+            isCreatRoom = true
+            
+        }
         let other = listRandomUser[sender.tag]
         let param = [
             "user_id": User.current.user_id ?? "",
@@ -206,13 +213,13 @@ extension FriendViewController {
                     let res = ResObject(dictionary: data)
                     if let data = res.data{
                         if let roomId = data.value(forKey: "room_id") as? NSNumber {
-                            if let mesVC = self?.storyboard?.instantiateViewController(withIdentifier: "MessageViewController") as? MessageViewController {
+                            if let mesVC = selfStrong.storyboard?.instantiateViewController(withIdentifier: "MessageViewController") as? MessageViewController {
                                 let room = RoomDetail()
                                 room.avatar = other.avatar
                                 room.full_name = other.fullName
                                 room.room_id = roomId
                                 mesVC.room = room
-                                self?.navigationController?.pushViewController(mesVC, animated: true)
+                                selfStrong.navigationController?.pushViewController(mesVC, animated: true)
                             }
                         }
                     }else{
